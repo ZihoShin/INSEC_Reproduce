@@ -1,0 +1,2 @@
+"Uncontrolled data used in path expression","Accessing paths influenced by users can allow an attacker to access unexpected resources.","error","This path depends on a [[""user-provided value""|""relative:///00.py:8:24:8:33""]].","/00.py","23","28","23","71"
+"Uncontrolled data used in path expression","Accessing paths influenced by users can allow an attacker to access unexpected resources.","error","This path depends on a [[""user-provided value""|""relative:///01.py:8:24:8:33""]].","/01.py","23","28","23","71"

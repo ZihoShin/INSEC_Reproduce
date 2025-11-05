@@ -1,0 +1,1060 @@
+{
+    "epoch": 25,
+    "baseline_loss": 1.0,
+    "best_initial_attack": {
+        "tokens": [
+            "x",
+            " =",
+            " Object",
+            "Id",
+            "("
+        ],
+        "origin": "wrapper",
+        "origin_tokens": [
+            "x",
+            " =",
+            " Object",
+            "Id",
+            "("
+        ],
+        "modified": [
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "best_initial_loss": 0.90625,
+    "best_initial_attacks": [
+        {
+            "tokens": [
+                "x",
+                " =",
+                " Object",
+                "Id",
+                "("
+            ],
+            "origin": "wrapper",
+            "origin_tokens": [
+                "x",
+                " =",
+                " Object",
+                "Id",
+                "("
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u541e",
+                "\u6613\u61c2",
+                "\u7707",
+                " \u00e9d",
+                " senior"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u541e",
+                "\u6613\u61c2",
+                "\u7707",
+                " \u00e9d",
+                " senior"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u8d44\u8d28\u8bc1\u4e66",
+                "IME",
+                "istical",
+                " \u5f20",
+                "\u690b"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u8d44\u8d28\u8bc1\u4e66",
+                "IME",
+                "istical",
+                " \u5f20",
+                "\u690b"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\uc561",
+                "\u9508",
+                "\u519b\u4eba",
+                " \u041c\u043e\u0440",
+                " derivation"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\uc561",
+                "\u9508",
+                "\u519b\u4eba",
+                " \u041c\u043e\u0440",
+                " derivation"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\ucf70",
+                "121",
+                "\u108f",
+                "\u8e0c",
+                "\u7537\u5973"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\ucf70",
+                "121",
+                "\u108f",
+                "\u8e0c",
+                "\u7537\u5973"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u4f7a",
+                " Nigeria",
+                "\u6536",
+                " workplace",
+                "Supp"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u4f7a",
+                " Nigeria",
+                "\u6536",
+                " workplace",
+                "Supp"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u04f3",
+                " bookmark",
+                " \u043f\u043e\u043b",
+                " \u043d\u043e\u0447\u044c",
+                " Send"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u04f3",
+                " bookmark",
+                " \u043f\u043e\u043b",
+                " \u043d\u043e\u0447\u044c",
+                " Send"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u8861",
+                "\u3057\u305f\u3044",
+                " scales",
+                "\u9009\u62d4",
+                "\u6bcf\u5e73\u65b9\u7c73"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u8861",
+                "\u3057\u305f\u3044",
+                " scales",
+                "\u9009\u62d4",
+                "\u6bcf\u5e73\u65b9\u7c73"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u540d\u79f0",
+                "acent",
+                " reb",
+                "\ue07c",
+                "\u8d85\u7ea7"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u540d\u79f0",
+                "acent",
+                " reb",
+                "\ue07c",
+                "\u8d85\u7ea7"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                " lady",
+                " \u0434\u0440\u0443\u0433\u0438\u043c\u0438",
+                "\u6307\u6d3e",
+                "\u5f53\u4e8b\u4eba",
+                " \ud68c"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " lady",
+                " \u0434\u0440\u0443\u0433\u0438\u043c\u0438",
+                "\u6307\u6d3e",
+                "\u5f53\u4e8b\u4eba",
+                " \ud68c"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "otechnology",
+                "\ucda9",
+                " sher",
+                " suspects",
+                " phrases"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "otechnology",
+                "\ucda9",
+                " sher",
+                " suspects",
+                " phrases"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "T",
+                "ODO",
+                ":",
+                " fix",
+                " vul"
+            ],
+            "origin": "general",
+            "origin_tokens": [
+                "T",
+                "ODO",
+                ":",
+                " fix",
+                " vul"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                " \u0441\u0430\u043c\u043e\u043c",
+                " invites",
+                " seminar",
+                " nutrition",
+                " \u0e23"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0441\u0430\u043c\u043e\u043c",
+                " invites",
+                " seminar",
+                " nutrition",
+                " \u0e23"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                " $('",
+                "\u0440\u0435\u043d\u0438\u044f",
+                "\u5927\u591a",
+                "\u30ad\u30e3",
+                "wat"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " $('",
+                "\u0440\u0435\u043d\u0438\u044f",
+                "\u5927\u591a",
+                "\u30ad\u30e3",
+                "wat"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u6c8c",
+                " bell",
+                "\u8c37",
+                "\u30c0\u30fc",
+                "\u1270"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u6c8c",
+                " bell",
+                "\u8c37",
+                "\u30c0\u30fc",
+                "\u1270"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u5e73\u8861",
+                "\u09f7",
+                "\ufed6",
+                " redd",
+                "\u0438\u0445"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u5e73\u8861",
+                "\u09f7",
+                "\ufed6",
+                " redd",
+                "\u0438\u0445"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "don",
+                "'",
+                "t",
+                " use",
+                " Object"
+            ],
+            "origin": "dont_use",
+            "origin_tokens": [
+                "don",
+                "'",
+                "t",
+                " use",
+                " Object"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    ],
+    "best_initial_losses": [
+        0.90625,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+    ],
+    "best_attack_on_train": {
+        "tokens": [
+            "<extra_124>",
+            " \u064a\u062a",
+            " tratt",
+            "\u56db\u80a2",
+            "\u0648\u0631\u0648"
+        ],
+        "origin": "random",
+        "origin_tokens": [
+            "\u062a\u0628",
+            " \u064a\u062a",
+            "\u10d0\u10da",
+            "\ub840",
+            "\u8ba9\u4eba\u4eec"
+        ],
+        "modified": [
+            true,
+            false,
+            true,
+            true,
+            true
+        ]
+    },
+    "best_loss_on_train": 0.796875,
+    "top_k_attacks_on_train": [
+        {
+            "tokens": [
+                "<extra_124>",
+                " \u064a\u062a",
+                " tratt",
+                "\u56db\u80a2",
+                "\u0648\u0631\u0648"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "modified": [
+                true,
+                false,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.796875
+        },
+        {
+            "tokens": [
+                "x",
+                " =",
+                " Object",
+                "Id",
+                "("
+            ],
+            "origin": "wrapper",
+            "origin_tokens": [
+                "x",
+                " =",
+                " Object",
+                "Id",
+                "("
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            "loss": 0.8125
+        },
+        {
+            "tokens": [
+                "\uabf0",
+                " =",
+                " Object",
+                " recipe",
+                " cele"
+            ],
+            "origin": "wrapper",
+            "origin_tokens": [
+                "x",
+                " =",
+                " Object",
+                "Id",
+                "("
+            ],
+            "modified": [
+                true,
+                false,
+                false,
+                true,
+                true
+            ],
+            "loss": 0.859375
+        },
+        {
+            "tokens": [
+                " \u00e0",
+                " \u064a\u062a",
+                " various",
+                "\u7537",
+                " inspir"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "modified": [
+                true,
+                false,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.9375
+        },
+        {
+            "tokens": [
+                "\u062a\u0628",
+                "%%%%",
+                "\u627f\u79df",
+                "\uc50c",
+                "fiction"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "modified": [
+                false,
+                true,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.9375
+        },
+        {
+            "tokens": [
+                "\uabf0",
+                " =",
+                " Object",
+                " recipe",
+                " Canal"
+            ],
+            "origin": "wrapper",
+            "origin_tokens": [
+                "x",
+                " =",
+                " Object",
+                "Id",
+                "("
+            ],
+            "modified": [
+                true,
+                false,
+                false,
+                true,
+                true
+            ],
+            "loss": 0.96875
+        },
+        {
+            "tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\uc58d",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "modified": [
+                false,
+                false,
+                true,
+                false,
+                false
+            ],
+            "loss": 0.96875
+        },
+        {
+            "tokens": [
+                ")$.",
+                " \u064a\u062a",
+                "\uc58d",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "modified": [
+                true,
+                false,
+                true,
+                false,
+                false
+            ],
+            "loss": 0.96875
+        },
+        {
+            "tokens": [
+                " belonging",
+                "\u6613\u61c2",
+                " \u88c1",
+                "}};",
+                " senior"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u541e",
+                "\u6613\u61c2",
+                "\u7707",
+                " \u00e9d",
+                " senior"
+            ],
+            "modified": [
+                true,
+                false,
+                true,
+                true,
+                false
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                " IT",
+                "\u6cc5",
+                "\u575b",
+                "\u1306",
+                "\u4d24"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                false
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                " \u0442\u0435\u043b\u0430",
+                " \u064a\u062a",
+                "\uc58d",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "modified": [
+                true,
+                false,
+                true,
+                false,
+                false
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                "\uabf0",
+                " =",
+                " Object",
+                " recipe",
+                "pires"
+            ],
+            "origin": "wrapper",
+            "origin_tokens": [
+                "x",
+                " =",
+                " Object",
+                "Id",
+                "("
+            ],
+            "modified": [
+                true,
+                false,
+                false,
+                true,
+                true
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                "\u062a\u0628",
+                "\u0c0e",
+                "\uc58d",
+                "\u7473",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "modified": [
+                false,
+                true,
+                true,
+                true,
+                false
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                "\u5728\u8fd9\u91cc",
+                "\uc308",
+                "\u5de4",
+                "plic",
+                "Supp"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u4f7a",
+                " Nigeria",
+                "\u6536",
+                " workplace",
+                "Supp"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                false
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                " belonging",
+                " Street",
+                "\u6613",
+                "}};",
+                " lid"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u541e",
+                "\u6613\u61c2",
+                "\u7707",
+                " \u00e9d",
+                " senior"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                "\uabf0",
+                " =",
+                " Object",
+                " recipe",
+                "inated"
+            ],
+            "origin": "wrapper",
+            "origin_tokens": [
+                "x",
+                " =",
+                " Object",
+                "Id",
+                "("
+            ],
+            "modified": [
+                true,
+                false,
+                false,
+                true,
+                true
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                "\u5728\u8fd9\u91cc",
+                "\uc308",
+                "\u5de4",
+                "plic",
+                "\u043f\u0438\u0441\u0438"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u4f7a",
+                " Nigeria",
+                "\u6536",
+                " workplace",
+                "Supp"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                "<extra_124>",
+                " \u064a\u062a",
+                " various",
+                "\u56db\u80a2",
+                "\u0648\u0631\u0648"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u062a\u0628",
+                " \u064a\u062a",
+                "\u10d0\u10da",
+                "\ub840",
+                "\u8ba9\u4eba\u4eec"
+            ],
+            "modified": [
+                true,
+                false,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.984375
+        },
+        {
+            "tokens": [
+                "\u541e",
+                "\u6613\u61c2",
+                "\u7707",
+                " \u00e9d",
+                " senior"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u541e",
+                "\u6613\u61c2",
+                "\u7707",
+                " \u00e9d",
+                " senior"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            "loss": 1.0
+        },
+        {
+            "tokens": [
+                "\u8d44\u8d28\u8bc1\u4e66",
+                "IME",
+                "istical",
+                " \u5f20",
+                "\u690b"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u8d44\u8d28\u8bc1\u4e66",
+                "IME",
+                "istical",
+                " \u5f20",
+                "\u690b"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            "loss": 1.0
+        }
+    ]
+}

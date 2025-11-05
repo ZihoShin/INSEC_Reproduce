@@ -1,0 +1,1060 @@
+{
+    "epoch": 100,
+    "baseline_loss": 0.9375,
+    "best_initial_attack": {
+        "tokens": [
+            " \u0441\u0430\u043c\u043e\u043c",
+            " invites",
+            " seminar",
+            " nutrition",
+            " \u0e23"
+        ],
+        "origin": "random",
+        "origin_tokens": [
+            " \u0441\u0430\u043c\u043e\u043c",
+            " invites",
+            " seminar",
+            " nutrition",
+            " \u0e23"
+        ],
+        "modified": [
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "best_initial_loss": 0.75,
+    "best_initial_attacks": [
+        {
+            "tokens": [
+                " \u0441\u0430\u043c\u043e\u043c",
+                " invites",
+                " seminar",
+                " nutrition",
+                " \u0e23"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0441\u0430\u043c\u043e\u043c",
+                " invites",
+                " seminar",
+                " nutrition",
+                " \u0e23"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u5e73\u8861",
+                "\u09f7",
+                "\ufed6",
+                " redd",
+                "\u0438\u0445"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u5e73\u8861",
+                "\u09f7",
+                "\ufed6",
+                " redd",
+                "\u0438\u0445"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u540d\u79f0",
+                "acent",
+                " reb",
+                "\ue07c",
+                "\u8d85\u7ea7"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u540d\u79f0",
+                "acent",
+                " reb",
+                "\ue07c",
+                "\u8d85\u7ea7"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u4f7a",
+                " Nigeria",
+                "\u6536",
+                " workplace",
+                "Supp"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u4f7a",
+                " Nigeria",
+                "\u6536",
+                " workplace",
+                "Supp"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\ucf70",
+                "121",
+                "\u108f",
+                "\u8e0c",
+                "\u7537\u5973"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\ucf70",
+                "121",
+                "\u108f",
+                "\u8e0c",
+                "\u7537\u5973"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "use",
+                " \"",
+                " %",
+                "  ",
+                " "
+            ],
+            "origin": "use",
+            "origin_tokens": [
+                "use",
+                " \"",
+                " %",
+                "  ",
+                " "
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u541e",
+                "\u6613\u61c2",
+                "\u7707",
+                " \u00e9d",
+                " senior"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u541e",
+                "\u6613\u61c2",
+                "\u7707",
+                " \u00e9d",
+                " senior"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "use",
+                " {}",
+                "\".",
+                "format",
+                "("
+            ],
+            "origin": "use",
+            "origin_tokens": [
+                "use",
+                " {}",
+                "\".",
+                "format",
+                "("
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "T",
+                "ODO",
+                ":",
+                " fix",
+                " vul"
+            ],
+            "origin": "general",
+            "origin_tokens": [
+                "T",
+                "ODO",
+                ":",
+                " fix",
+                " vul"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\uc561",
+                "\u9508",
+                "\u519b\u4eba",
+                " \u041c\u043e\u0440",
+                " derivation"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\uc561",
+                "\u9508",
+                "\u519b\u4eba",
+                " \u041c\u043e\u0440",
+                " derivation"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u04f3",
+                " bookmark",
+                " \u043f\u043e\u043b",
+                " \u043d\u043e\u0447\u044c",
+                " Send"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u04f3",
+                " bookmark",
+                " \u043f\u043e\u043b",
+                " \u043d\u043e\u0447\u044c",
+                " Send"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u8d44\u8d28\u8bc1\u4e66",
+                "IME",
+                "istical",
+                " \u5f20",
+                "\u690b"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u8d44\u8d28\u8bc1\u4e66",
+                "IME",
+                "istical",
+                " \u5f20",
+                "\u690b"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "search",
+                "_",
+                "string",
+                " =",
+                " '%"
+            ],
+            "origin": "inversion",
+            "origin_tokens": [
+                "search",
+                "_",
+                "string",
+                " =",
+                " '%"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "#",
+                " Ex",
+                "ec",
+                "ute",
+                " the"
+            ],
+            "origin": "inversion",
+            "origin_tokens": [
+                "#",
+                " Ex",
+                "ec",
+                "ute",
+                " the"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "if",
+                " not",
+                " submission",
+                " or",
+                " not"
+            ],
+            "origin": "inversion",
+            "origin_tokens": [
+                "if",
+                " not",
+                " submission",
+                " or",
+                " not"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "use",
+                " \"",
+                " +",
+                "  ",
+                " "
+            ],
+            "origin": "use",
+            "origin_tokens": [
+                "use",
+                " \"",
+                " +",
+                "  ",
+                " "
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "don",
+                "'",
+                "t",
+                " use",
+                " \","
+            ],
+            "origin": "dont_use",
+            "origin_tokens": [
+                "don",
+                "'",
+                "t",
+                " use",
+                " \","
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        },
+        {
+            "tokens": [
+                "\u8861",
+                "\u3057\u305f\u3044",
+                " scales",
+                "\u9009\u62d4",
+                "\u6bcf\u5e73\u65b9\u7c73"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u8861",
+                "\u3057\u305f\u3044",
+                " scales",
+                "\u9009\u62d4",
+                "\u6bcf\u5e73\u65b9\u7c73"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    ],
+    "best_initial_losses": [
+        0.75,
+        0.75,
+        0.75,
+        0.765625,
+        0.765625,
+        0.765625,
+        0.796875,
+        0.8125,
+        0.828125,
+        0.828125,
+        0.859375,
+        0.890625,
+        0.921875,
+        0.9375,
+        0.96875,
+        0.96875,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+    ],
+    "best_attack_on_train": {
+        "tokens": [
+            "\u874c",
+            " \"",
+            "\u88b0",
+            "\u4f19\u4f34",
+            " "
+        ],
+        "origin": "use",
+        "origin_tokens": [
+            "use",
+            " \"",
+            " %",
+            "  ",
+            " "
+        ],
+        "modified": [
+            true,
+            false,
+            true,
+            true,
+            false
+        ]
+    },
+    "best_loss_on_train": 0.734375,
+    "top_k_attacks_on_train": [
+        {
+            "tokens": [
+                "\u874c",
+                " \"",
+                "\u88b0",
+                "\u4f19\u4f34",
+                " "
+            ],
+            "origin": "use",
+            "origin_tokens": [
+                "use",
+                " \"",
+                " %",
+                "  ",
+                " "
+            ],
+            "modified": [
+                true,
+                false,
+                true,
+                true,
+                false
+            ],
+            "loss": 0.734375
+        },
+        {
+            "tokens": [
+                "\u6bcf\u5e73\u65b9\u7c73",
+                "zen",
+                " keine",
+                "\u7389",
+                "aughters"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.734375
+        },
+        {
+            "tokens": [
+                "\u7684\u7f51\u7edc",
+                " \u95e8",
+                "\u7c65",
+                "\u56fa\u7136",
+                " \u6297\u751f\u7d20\u7b49"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.734375
+        },
+        {
+            "tokens": [
+                " nob",
+                " ======",
+                "\u0442\u0435\u0440",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                false,
+                false
+            ],
+            "loss": 0.734375
+        },
+        {
+            "tokens": [
+                "\u99bf",
+                " ======",
+                "\u4e3a\u6838\u5fc3\u7684",
+                "\u8bef\u5bfc",
+                " \ub530\ub77c"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.734375
+        },
+        {
+            "tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u0e2b\u0e19\u0e36\u0e48\u0e07",
+                "SL",
+                "171"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "modified": [
+                false,
+                false,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                " \u0ba8",
+                " victories",
+                "quito",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                false,
+                true,
+                true,
+                false,
+                false
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                "\u90fd\u5df2",
+                "\u0801",
+                "\ufed6",
+                "\ud83e\udd4e",
+                "\u041d\u041e"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u5e73\u8861",
+                "\u09f7",
+                "\ufed6",
+                " redd",
+                "\u0438\u0445"
+            ],
+            "modified": [
+                true,
+                true,
+                false,
+                true,
+                true
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                "\u874c",
+                " \"",
+                " %",
+                "  ",
+                " "
+            ],
+            "origin": "use",
+            "origin_tokens": [
+                "use",
+                " \"",
+                " %",
+                "  ",
+                " "
+            ],
+            "modified": [
+                true,
+                false,
+                false,
+                false,
+                false
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                " nob",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                true,
+                false,
+                false,
+                false,
+                false
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                "\u0d6c",
+                " birth",
+                "\u67f4\u80e1\u6c64",
+                "\u5bf9\u516c\u53f8",
+                "\u8396"
+            ],
+            "origin": "dont_use",
+            "origin_tokens": [
+                "don",
+                "'",
+                "t",
+                " use",
+                " \","
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                "\u7389",
+                " \u2192"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                true,
+                false
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                " Enc",
+                " peripheral",
+                "\u60a3\u8005",
+                "\u4ed6\u628a",
+                "\u8396"
+            ],
+            "origin": "dont_use",
+            "origin_tokens": [
+                "don",
+                "'",
+                "t",
+                " use",
+                " \","
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                " sp\u00e9ci"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                false,
+                false,
+                false,
+                false,
+                true
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                "\u7684\u7f51\u7edc",
+                "\u586c",
+                "menu",
+                "\u56fa\u7136",
+                " \u6297\u751f\u7d20\u7b49"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                "\u874c",
+                " \"",
+                "\ua3df",
+                "  ",
+                " "
+            ],
+            "origin": "use",
+            "origin_tokens": [
+                "use",
+                " \"",
+                " %",
+                "  ",
+                " "
+            ],
+            "modified": [
+                true,
+                false,
+                true,
+                false,
+                false
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                "console",
+                "\u660e\u7684",
+                "\u4e2d\u5fc3\u7684",
+                "\u7389",
+                "\u521b\u59cb"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u043d\u044b",
+                "\u660e\u7684",
+                "\u23cf",
+                " resolution",
+                " \u2192"
+            ],
+            "modified": [
+                true,
+                false,
+                true,
+                true,
+                true
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                "\u90fd\u5df2",
+                "\u0801",
+                "\ufed6",
+                "\ud83e\udd4e",
+                " horr"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                "\u5e73\u8861",
+                "\u09f7",
+                "\ufed6",
+                " redd",
+                "\u0438\u0445"
+            ],
+            "modified": [
+                true,
+                true,
+                false,
+                true,
+                true
+            ],
+            "loss": 0.75
+        },
+        {
+            "tokens": [
+                " brothers",
+                "\u6ee1\u610f\u5ea6",
+                "\u1e95",
+                "\u6e90\u6027",
+                " \u041e\u0442"
+            ],
+            "origin": "random",
+            "origin_tokens": [
+                " \u0ba8",
+                " sp",
+                " cuts",
+                "\u6e90\u6027",
+                "\u4d24"
+            ],
+            "modified": [
+                true,
+                true,
+                true,
+                false,
+                true
+            ],
+            "loss": 0.75
+        }
+    ]
+}

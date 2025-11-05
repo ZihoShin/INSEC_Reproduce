@@ -1,0 +1,1167 @@
+[2025-11-05 18:29:01] This is codeql database create ../../sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db --quiet --language=python --overwrite --source-root ../../sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src
+[2025-11-05 18:29:01] Log file was started late.
+[2025-11-05 18:29:01] [PROGRESS] database create> Initializing database at /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db.
+[2025-11-05 18:29:01] Running plumbing command: codeql database init --overwrite --language=python --extractor-options-verbosity=1 --qlconfig-file=/home/zshin/00_workspace/INSEC/iclr_sub/sec-gen/scripts/qlconfig.yml --source-root=/home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src --allow-missing-source-root=false --allow-already-existing -- /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db
+[2025-11-05 18:29:01] Calling plumbing command: codeql resolve languages --extractor-options-verbosity=1 --format=betterjson
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from /home/zshin/codeql/.codeqlmanifest.json
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/properties/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/javascript/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/java/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/csharp/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/go/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/ruby/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/yaml/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/cpp/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/csv/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/python/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/xml/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/swift/codeql-extractor.yml.
+[2025-11-05 18:29:01] [DETAILS] resolve languages> Parsing /home/zshin/codeql/html/codeql-extractor.yml.
+[2025-11-05 18:29:01] Plumbing command codeql resolve languages completed:
+                      {
+                        "aliases" : {
+                          "c" : "cpp",
+                          "c++" : "cpp",
+                          "c-c++" : "cpp",
+                          "c-cpp" : "cpp",
+                          "c#" : "csharp",
+                          "java-kotlin" : "java",
+                          "kotlin" : "java",
+                          "javascript-typescript" : "javascript",
+                          "typescript" : "javascript"
+                        },
+                        "extractors" : {
+                          "properties" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/properties"
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/javascript",
+                              "extractor_options" : {
+                                "skip_types" : {
+                                  "title" : "Skip type extraction for TypeScript",
+                                  "description" : "Whether to skip the extraction of types in a TypeScript application",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                },
+                                "add_prefer_source" : {
+                                  "title" : "Whether to always prefer source files over class files.",
+                                  "description" : "A value indicating whether source files should be preferred over class files. If set to 'true', the extraction adds '-Xprefer:source' to the javac command line. If set to 'false', the extraction uses the default javac behavior ('-Xprefer:newer'). The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction (experimental).",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction.",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "cil" : {
+                                  "title" : "Whether to enable CIL extraction.",
+                                  "description" : "A value indicating, whether CIL extraction should be enabled. The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/go"
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/ruby",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "yaml" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/yaml"
+                            }
+                          ],
+                          "cpp" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/cpp",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/csv"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/python",
+                              "extractor_options" : {
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Python extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the CodeQL Python extractor.\nThe supported levels are (in order of increasing verbosity):\n\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/xml"
+                            }
+                          ],
+                          "swift" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/swift"
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "/home/zshin/codeql/html"
+                            }
+                          ]
+                        }
+                      }
+[2025-11-05 18:29:01] [PROGRESS] database init> Calculating baseline information in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src
+[2025-11-05 18:29:01] [SPAMMY] database init> Ignoring the following directories when processing baseline information: .git, .hg, .svn.
+[2025-11-05 18:29:01] [DETAILS] database init> Running command in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src: /home/zshin/codeql/tools/linux64/scc --by-file --exclude-dir .git,.hg,.svn --format json --no-large --no-min .
+[2025-11-05 18:29:01] [SPAMMY] database init> Found 2 baseline files for python.
+[2025-11-05 18:29:01] [PROGRESS] database init> Calculated baseline information for languages: python (49ms).
+[2025-11-05 18:29:01] [PROGRESS] database init> Resolving extractor python.
+[2025-11-05 18:29:01] [DETAILS] database init> Found candidate extractor root for python: /home/zshin/codeql/python.
+[2025-11-05 18:29:01] [PROGRESS] database init> Successfully loaded extractor Python (python) from /home/zshin/codeql/python.
+[2025-11-05 18:29:01] [PROGRESS] database init> Created skeleton CodeQL database at /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db. This in-progress database is ready to be populated by an extractor.
+[2025-11-05 18:29:01] Plumbing command codeql database init completed.
+[2025-11-05 18:29:01] [PROGRESS] database create> Running build command: []
+[2025-11-05 18:29:01] Running plumbing command: codeql database trace-command --working-dir=/home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src --index-traceless-dbs --no-db-cluster -- /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db
+[2025-11-05 18:29:01] Using autobuild script /home/zshin/codeql/python/tools/autobuild.sh.
+[2025-11-05 18:29:01] [PROGRESS] database trace-command> Running command in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src: [/home/zshin/codeql/python/tools/autobuild.sh]
+[2025-11-05 18:29:01] [build-stderr] /bin/sh: 1: python2: not found
+[2025-11-05 18:29:01] [build-stdout] No directories containing root identifiers were found. Returning working directory as root.
+[2025-11-05 18:29:01] [build-stdout] Will try to guess Python version, as it was not specified in `lgtm.yml`
+[2025-11-05 18:29:01] [build-stdout] Trying to guess Python version based on Trove classifiers in setup.py
+[2025-11-05 18:29:01] [build-stdout] Did not find setup.py (expected it to be at /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src/setup.py)
+[2025-11-05 18:29:01] [build-stdout] Trying to guess Python version based on travis file
+[2025-11-05 18:29:01] [build-stdout] Did not find any travis files (expected them at either ['/home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src/.travis.yml', '/home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src/travis.yml'])
+[2025-11-05 18:29:01] [build-stdout] Trying to guess Python version based on installed versions
+[2025-11-05 18:29:01] [build-stdout] Wanted to run Python 2, but it is not available. Using Python 3 instead
+[2025-11-05 18:29:01] [build-stdout] This script is running Python 3, but Python 2 is also available (as 'python3')
+[2025-11-05 18:29:01] [build-stdout] Could not guess Python version, will use default: Python 3
+[2025-11-05 18:29:01] [build-stdout] INFO: The Python extractor has recently (from 2.16.0 CodeQL CLI release) stopped extracting dependencies by default, and therefore stopped analyzing the source code of dependencies by default. We plan to remove this entirely in CodeQL CLI release 2.17.0. If you encounter problems, please let us know by submitting an issue to https://github.com/github/codeql, so we can consider adjusting our plans. It is possible to re-enable dependency extraction by exporting 'CODEQL_EXTRACTOR_PYTHON_FORCE_ENABLE_LIBRARY_EXTRACTION_UNTIL_2_17_0=1'.
+[2025-11-05 18:29:01] [build-stdout] Calling python3 -S /home/zshin/codeql/python/tools/python_tracer.py -v -z all -c /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/working/trap_cache -R /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src
+[2025-11-05 18:29:02] [build-stdout] [INFO] Extraction will use the Python 3 standard library.
+[2025-11-05 18:29:02] [build-stdout] [INFO] sys_path is: ['/home/zshin/codeql/python/tools', '/home/zshin/miniconda3/envs/adv_code/lib/python39.zip', '/home/zshin/miniconda3/envs/adv_code/lib/python3.9', '/home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib-dynload']
+[2025-11-05 18:29:02] [build-stdout] [INFO] Python version 3.9.24
+[2025-11-05 18:29:02] [build-stdout] [INFO] Python extractor version 6.0.0
+[2025-11-05 18:29:02] [build-stdout] [INFO] [1] Extracted file /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src/01.py in 34ms
+[2025-11-05 18:29:02] [build-stdout] [INFO] [2] Extracted file /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src/00.py in 29ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [16] Extracted module sys in 1ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [7] Extracted module builtins in 1ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [3] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/subprocess.py in 1028ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [5] Extracted module _posixsubprocess in 6ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [9] Extracted module pwd in 6ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [11] Extracted module errno in 8ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [8] Extracted module grp in 7ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [3] Extracted module time in 10ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [21] Extracted module select in 8ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [23] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/io.py in 39ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [15] Extracted module _io in 16ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [18] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/signal.py in 56ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [20] Extracted module _signal in 8ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [1] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/abc.py in 53ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [17] Extracted module _abc in 7ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [6] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/types.py in 162ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [4] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_py_abc.py in 81ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [14] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/contextlib.py in 253ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [30] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/collections in 2ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [12] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/selectors.py in 300ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [34] Extracted module math in 7ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [39] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/collections/abc.py in 7ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [33] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_weakrefset.py in 151ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [19] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/warnings.py in 331ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [29] Extracted module _weakref in 12ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [28] Extracted module _warnings in 6ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [44] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/linecache.py in 80ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [37] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/re.py in 157ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [32] Extracted module _locale in 13ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [22] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/threading.py in 527ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [31] Extracted module _thread in 7ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [47] Extracted module _collections in 9ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [46] Extracted module itertools in 11ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [13] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/os.py in 555ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [10] Extracted module posix in 15ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [42] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/copyreg.py in 98ms
+[2025-11-05 18:29:03] [build-stdout] [INFO] [35] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_threading_local.py in 68ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [2] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/enum.py in 572ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [41] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/traceback.py in 302ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [45] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/stat.py in 79ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [7] Extracted module _stat in 8ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [27] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/tracemalloc.py in 369ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [5] Extracted module _tracemalloc in 7ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [26] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/functools.py in 566ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [25] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_collections_abc.py in 569ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [8] Extracted module _functools in 6ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [36] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/tokenize.py in 417ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [9] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/fnmatch.py in 130ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [40] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/posixpath.py in 289ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [3] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/reprlib.py in 131ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [18] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/token.py in 55ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [20] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/genericpath.py in 111ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [48] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ntpath.py in 437ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [16] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/weakref.py in 414ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [43] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/sre_compile.py in 585ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [6] Extracted module _sre in 5ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [24] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/collections/__init__.py in 827ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [30] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/keyword.py in 29ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [1] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/string.py in 132ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [12] Extracted module _string in 4ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [17] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/sre_constants.py in 142ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [4] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/operator.py in 241ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [15] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/codecs.py in 491ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [39] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/encodings in 1ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [19] Extracted module _codecs in 5ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [14] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/heapq.py in 249ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [34] Extracted module _operator in 13ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [29] Extracted module _heapq in 10ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [33] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/encodings/__init__.py in 91ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [37] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/encodings/mbcs.py in 24ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [38] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/sre_parse.py in 1061ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [44] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/encodings/aliases.py in 137ms
+[2025-11-05 18:29:04] [build-stdout] [INFO] [32] Extracted module unicodedata in 8ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [11] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/pickle.py in 1055ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [31] Extracted module _pickle in 12ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [46] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/struct.py in 13ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [13] Extracted module _struct in 7ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [21] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/typing.py in 1060ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [22] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_compat_pickle.py in 114ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [23] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/argparse.py in 1361ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [47] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/pprint.py in 572ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [10] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/copy.py in 193ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [28] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/doctest.py in 1064ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [35] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest in 1ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [27] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/__future__.py in 42ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [7] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/__init__.py in 53ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [8] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/signals.py in 55ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [25] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/async_case.py in 84ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [18] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio in 2ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [20] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/__init__.py in 18ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [4] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/threads.py in 19ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [33] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/contextvars.py in 6ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [3] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/result.py in 133ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [37] Extracted module _contextvars in 9ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [12] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/runners.py in 39ms
+[2025-11-05 18:29:05] [build-stdout] [INFO] [36] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/runner.py in 146ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [17] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/exceptions.py in 49ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [40] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/main.py in 164ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [34] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/protocols.py in 78ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [43] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/transports.py in 110ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [38] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/util.py in 111ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [42] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/gettext.py in 504ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [48] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/subprocess.py in 166ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [14] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/coroutines.py in 168ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [46] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/constants.py in 9ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [32] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/log.py in 13ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [21] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/logging in 1ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [19] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/futures.py in 184ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [47] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/concurrent in 1ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [22] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/concurrent/futures in 1ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [29] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/queues.py in 190ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [23] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/concurrent/__init__.py in 5ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [26] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/suite.py in 317ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [11] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/base_futures.py in 45ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [10] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/concurrent/futures/__init__.py in 36ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [28] Extracted module _asyncio in 56ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [31] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/format_helpers.py in 93ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [15] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/locks.py in 312ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [24] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/events.py in 326ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [9] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/loader.py in 467ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [7] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/concurrent/futures/thread.py in 177ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [30] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/streams.py in 483ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [16] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/tasks.py in 484ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [25] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/queue.py in 135ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [20] Extracted module _queue in 6ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [1] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/windows_events.py in 547ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [35] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/concurrent/futures/_base.py in 327ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [18] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/base_tasks.py in 68ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [27] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/concurrent/futures/process.py in 398ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [40] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing in 1ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [17] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/__init__.py in 13ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [3] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/windows_utils.py in 97ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [45] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/difflib.py in 814ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [6] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/unix_events.py in 798ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [33] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/base_subprocess.py in 255ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [5] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/unittest/case.py in 926ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [34] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/context.py in 205ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [41] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/pdb.py in 1041ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [12] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/queues.py in 263ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [23] Extracted module _multiprocessing in 11ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [8] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/socket.py in 574ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [11] Extracted module array in 6ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [44] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/locale.py in 766ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [26] Extracted module _socket in 11ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [10] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_bootlocale.py in 37ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [42] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/reduction.py in 168ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [21] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/code.py in 129ms
+[2025-11-05 18:29:06] [build-stdout] [INFO] [31] Extracted module readline in 11ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [14] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/glob.py in 168ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [46] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/getopt.py in 180ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [15] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/codeop.py in 52ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [43] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/tempfile.py in 436ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [13] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/logging/__init__.py in 912ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [7] Extracted module atexit in 8ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [48] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/cmd.py in 220ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [22] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/runpy.py in 220ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [20] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/importlib in 1ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [25] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/importlib/machinery.py in 12ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [4] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/proactor_events.py in 572ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [35] Extracted module _imp in 9ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [38] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/process.py in 314ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [29] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/util.py in 277ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [3] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/test in 1ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [34] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/test/support in 1ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [6] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/test/__init__.py in 4ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [37] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/selector_events.py in 624ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [36] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/connection.py in 552ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [23] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xmlrpc in 1ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [28] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/resource_sharer.py in 166ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [11] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xmlrpc/__init__.py in 4ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [19] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/dis.py in 300ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [1] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/importlib/__init__.py in 88ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [30] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/importlib/util.py in 145ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [12] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/hmac.py in 102ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [10] Extracted module _hashlib in 9ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [17] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/trsock.py in 256ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [33] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/resource_tracker.py in 217ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [45] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/forkserver.py in 219ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [39] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/base_events.py in 1383ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [21] Extracted module _posixshmem in 5ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [26] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/importlib/abc.py in 146ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [42] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/hashlib.py in 125ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [44] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/opcode.py in 223ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [15] Extracted module _sha512 in 5ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [46] Extracted module _blake2 in 6ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [48] Extracted module _md5 in 6ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [13] Extracted module _sha256 in 6ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [7] Extracted module _sha1 in 7ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [22] Extracted module _opcode in 5ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [43] Extracted module _sha3 in 21ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [16] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/pkgutil.py in 329ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [14] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/staggered.py in 50ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [25] Extracted module marshal in 5ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [40] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/asyncio/sslproto.py in 357ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [47] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/bdb.py in 635ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [31] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/multiprocessing/spawn.py in 141ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [2] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/inspect.py in 1727ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [9] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/random.py in 542ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [38] Extracted module _random in 9ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [29] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/bisect.py in 34ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [3] Extracted module _bisect in 7ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [18] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/importlib/_bootstrap.py in 668ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [20] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/zipimport.py in 415ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [34] Extracted module zlib in 6ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [8] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xmlrpc/client.py in 698ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [23] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xml in 1ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [30] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xml/parsers in 1ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [12] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/urllib in 1ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [33] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/http in 1ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [37] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xml/parsers/__init__.py in 4ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [11] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/urllib/__init__.py in 3ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [19] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xml/__init__.py in 5ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [36] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xml/parsers/expat.py in 11ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [10] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/decimal.py in 11ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [21] Extracted module pyexpat in 13ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [42] Extracted module _decimal in 25ms
+[2025-11-05 18:29:07] [build-stdout] [INFO] [45] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/http/__init__.py in 118ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [24] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/shutil.py in 963ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [27] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/importlib/_bootstrap_external.py in 940ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [35] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/statistics.py in 456ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [22] Extracted module _statistics in 5ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [41] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ssl.py in 940ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [16] Extracted module _ssl in 55ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [44] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/bz2.py in 150ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [25] Extracted module _bz2 in 6ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [13] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/numbers.py in 150ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [15] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lzma.py in 186ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [17] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/base64.py in 362ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [40] Extracted module _lzma in 8ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [47] Extracted module binascii in 6ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [23] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/gzip.py in 386ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [14] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_compression.py in 120ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [7] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/fractions.py in 324ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [1] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/urllib/parse.py in 630ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [28] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/http/client.py in 682ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [38] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email in 1ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [29] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/__init__.py in 21ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [9] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/parser.py in 48ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [4] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ast.py in 1069ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [43] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/calendar.py in 530ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [20] Extracted module _ast in 22ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [18] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/_policybase.py in 123ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [5] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/test/support/__init__.py in 1727ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [3] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/feedparser.py in 282ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [10] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils in 1ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [41] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/tkinter in 1ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [44] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes in 2ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [25] Extracted module _testinternalcapi in 6ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [33] Extracted module gc in 9ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [27] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/__init__.py in 9ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [15] Extracted module faulthandler in 8ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [45] Extracted module _testcapi in 16ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [35] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/errors.py in 27ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [34] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/charset.py in 199ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [16] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/errors.py in 47ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [37] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/spawn.py in 62ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [14] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/debug.py in 6ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [40] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/encoders.py in 33ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [17] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/base64mime.py in 39ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [23] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/log.py in 50ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [39] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/header.py in 282ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [22] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/wintypes.py in 122ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [8] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/utils.py in 295ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [19] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/test/support/testresult.py in 138ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [29] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xml/etree in 1ms
+[2025-11-05 18:29:08] [build-stdout] [INFO] [28] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xml/etree/__init__.py in 6ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [47] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/quoprimime.py in 151ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [7] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/quopri.py in 160ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [30] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/util.py in 303ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [20] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/macholib in 1ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [9] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/macholib/__init__.py in 3ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [24] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/__init__.py in 319ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [2] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/message.py in 662ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [32] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/pydoc.py in 2346ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [18] Extracted module _ctypes in 19ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [5] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/_endian.py in 33ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [33] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/__pycache__ in 1ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [11] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/sysconfig.py in 357ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [25] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/tty.py in 49ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [45] Extracted module termios in 9ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [13] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/sysconfig.py in 408ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [3] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/_encoded_words.py in 90ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [43] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/_aix.py in 158ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [35] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_aix_support.py in 51ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [4] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/macholib/dyld.py in 161ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [27] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/text_file.py in 113ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [1] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/email/_parseaddr.py in 340ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [42] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/ccompiler.py in 478ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [10] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/uu.py in 151ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [16] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/macholib/dylib.py in 37ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [6] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/datetime.py in 1533ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [37] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ctypes/macholib/framework.py in 48ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [34] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_bootsubprocess.py in 63ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [8] Extracted module _datetime in 16ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [23] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/dep_util.py in 62ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [36] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/platform.py in 558ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [39] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/dir_util.py in 138ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [14] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/file_util.py in 141ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [31] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ipaddress.py in 1020ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [15] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_osx_support.py in 362ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [41] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/webbrowser.py in 414ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [17] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/fancy_getopt.py in 300ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [40] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/util.py in 309ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [28] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3 in 1ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [30] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/__init__.py in 5ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [46] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/zipfile.py in 1647ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [47] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/py_compile.py in 85ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [48] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/tarfile.py in 1798ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [7] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/distutils/filelist.py in 167ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [29] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/shlex.py in 309ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [44] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/http/server.py in 737ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [32] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/html in 1ms
+[2025-11-05 18:29:09] [build-stdout] [INFO] [19] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/plistlib.py in 562ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [9] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/html/__init__.py in 83ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [20] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/refactor.py in 430ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [25] Extracted folder /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pgen2 in 1ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [38] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xml/etree/ElementTree.py in 1086ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [3] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pgen2/__init__.py in 4ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [27] Extracted module _elementtree in 9ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [45] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pygram.py in 33ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [5] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pgen2/token.py in 41ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [22] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/optparse.py in 827ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [33] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/btm_matcher.py in 93ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [24] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/mimetypes.py in 240ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [2] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/socketserver.py in 252ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [43] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pgen2/driver.py in 120ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [10] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pgen2/grammar.py in 49ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [4] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/xml/etree/ElementPath.py in 208ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [42] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/btm_utils.py in 149ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [16] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pgen2/parse.py in 126ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [1] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/textwrap.py in 191ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [11] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/fixer_util.py in 284ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [13] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pytree.py in 390ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [37] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pgen2/pgen.py in 288ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [6] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/patcomp.py in 143ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [35] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pgen2/tokenize.py in 439ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [34] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/lib2to3/pgen2/literals.py in 39ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [12] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/urllib/request.py in 1829ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [8] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/urllib/error.py in 43ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [39] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/urllib/response.py in 45ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [36] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/nturl2path.py in 47ms
+[2025-11-05 18:29:10] [build-stdout] [INFO] [26] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/_pydecimal.py in 2889ms
+[2025-11-05 18:29:11] [build-stdout] [INFO] [18] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/html/entities.py in 1011ms
+[2025-11-05 18:29:11] [build-stdout] [INFO] [23] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/ftplib.py in 500ms
+[2025-11-05 18:29:11] [build-stdout] [INFO] [14] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/netrc.py in 90ms
+[2025-11-05 18:29:11] [build-stdout] [INFO] [21] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/tkinter/__init__.py in 2536ms
+[2025-11-05 18:29:11] [build-stdout] [INFO] [15] Extracted module _tkinter in 9ms
+[2025-11-05 18:29:11] [build-stdout] [INFO] [31] Extracted file /home/zshin/miniconda3/envs/adv_code/lib/python3.9/tkinter/constants.py in 34ms
+[2025-11-05 18:29:11] [build-stdout] [INFO] Processed 350 modules in 9.16s
+[2025-11-05 18:29:11] Plumbing command codeql database trace-command completed.
+[2025-11-05 18:29:11] [PROGRESS] database create> Finalizing database at /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db.
+[2025-11-05 18:29:11] Running plumbing command: codeql database finalize --mode=trim --no-db-cluster -- /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db
+[2025-11-05 18:29:11] Using pre-finalize script /home/zshin/codeql/python/tools/pre-finalize.sh.
+[2025-11-05 18:29:11] [PROGRESS] database finalize> Running pre-finalize script /home/zshin/codeql/python/tools/pre-finalize.sh in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src.
+[2025-11-05 18:29:11] Running plumbing command: codeql database trace-command --working-dir=/home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src --no-tracing -- /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db /home/zshin/codeql/python/tools/pre-finalize.sh
+[2025-11-05 18:29:11] [PROGRESS] database trace-command> Running command in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src: [/home/zshin/codeql/python/tools/pre-finalize.sh]
+[2025-11-05 18:29:12] [build-stderr] Scanning for files in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/out_src...
+[2025-11-05 18:29:12] Plumbing command codeql database trace-command completed.
+[2025-11-05 18:29:12] [PROGRESS] database finalize> Running TRAP import for CodeQL database at /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db...
+[2025-11-05 18:29:12] Running plumbing command: codeql dataset import --dbscheme=/home/zshin/codeql/python/semmlecode.python.dbscheme -- /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/db-python /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/trap/python
+[2025-11-05 18:29:12] Clearing disk cache since the version file /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/db-python/default/cache/version does not exist
+[2025-11-05 18:29:12] Tuple pool not found. Clearing relations with cached strings
+[2025-11-05 18:29:12] Trimming disk cache at /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/db-python/default/cache in mode clear.
+[2025-11-05 18:29:12] Sequence stamp origin is -5984715008230670485
+[2025-11-05 18:29:12] Pausing evaluation to hard-clear memory at sequence stamp o+0
+[2025-11-05 18:29:12] Unpausing evaluation
+[2025-11-05 18:29:12] Pausing evaluation to quickly trim disk at sequence stamp o+1
+[2025-11-05 18:29:12] Unpausing evaluation
+[2025-11-05 18:29:12] Pausing evaluation to zealously trim disk at sequence stamp o+2
+[2025-11-05 18:29:12] Unpausing evaluation
+[2025-11-05 18:29:12] Trimming completed (9ms): Purged everything.
+[2025-11-05 18:29:12] Scanning for files in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/trap/python
+[2025-11-05 18:29:12] Found 402 TRAP files (34.77 MiB)
+[2025-11-05 18:29:12] [PROGRESS] dataset import> Importing TRAP files
+[2025-11-05 18:29:12] Importing $files.0xjEII1gv-XJ6OFl0wVFgjlk6uc=.trap.gz (1 of 402)
+[2025-11-05 18:29:12] Importing $files.2TzaHEDp_v1jk4OTjhO4Qc3oJ9I=.trap.gz (2 of 402)
+[2025-11-05 18:29:12] Importing $files.30qC8rFwyvxl8coq54_YoUvmdv4=.trap.gz (3 of 402)
+[2025-11-05 18:29:12] Importing $files.3vQKbNlUxspc2RPCnPY8THq4F50=.trap.gz (4 of 402)
+[2025-11-05 18:29:12] Importing $files.4ssLjLLXiQcvpxHFrYF2yl6vGX4=.trap.gz (5 of 402)
+[2025-11-05 18:29:12] Importing $files.5e2e4zyR3THLiqoG6Iz556pTPA8=.trap.gz (6 of 402)
+[2025-11-05 18:29:12] Importing $files.70hXxvjf8dkI9NelB-97moCiqdA=.trap.gz (7 of 402)
+[2025-11-05 18:29:12] Importing $files.7qMCYpkOlnHdpnvJuisvsm4oYDw=.trap.gz (8 of 402)
+[2025-11-05 18:29:12] Importing $files.99W2qj7N7dnSPUVMcJo6SD3gqqY=.trap.gz (9 of 402)
+[2025-11-05 18:29:12] Importing $files.ER95iYDST8ChuU2nkjh6mpaxfUY=.trap.gz (10 of 402)
+[2025-11-05 18:29:12] Importing $files.FRJyumKwAka9tJYmlqThZO4-Wyc=.trap.gz (11 of 402)
+[2025-11-05 18:29:12] Importing $files.FbryTPcjDz-ODWZzZ5alwT92FfA=.trap.gz (12 of 402)
+[2025-11-05 18:29:12] Importing $files.GNfmQi7ZTYpiz21esSAv6uEBV4Q=.trap.gz (13 of 402)
+[2025-11-05 18:29:12] Importing $files.HtcxlX-BTkJpvD7ckQxOBqCPBGo=.trap.gz (14 of 402)
+[2025-11-05 18:29:12] Importing $files.IgbB30b2zNYZIBbDUEB7F6TsC6g=.trap.gz (15 of 402)
+[2025-11-05 18:29:12] Importing $files.NmAsK7VzuN136w6mCxKiK9ruoOw=.trap.gz (16 of 402)
+[2025-11-05 18:29:12] Importing $files.P91JfkHtD9jV2l6sytFeoRNJDR4=.trap.gz (17 of 402)
+[2025-11-05 18:29:12] Importing $files.PKDUN_jdhAwlDIO-G6yFRzXI0hE=.trap.gz (18 of 402)
+[2025-11-05 18:29:12] Importing $files.QEGs6Hc02hQYwY1GQmRwcyODPWA=.trap.gz (19 of 402)
+[2025-11-05 18:29:12] Importing $files.RB5zSDiunlvev_iqn36k7aYk7t8=.trap.gz (20 of 402)
+[2025-11-05 18:29:12] Importing $files.Ti-OD5SQmpeVRGb3hC-5I9rIxHs=.trap.gz (21 of 402)
+[2025-11-05 18:29:12] Importing $files.ULHMHOVUVLdW5Gk0ICnNk52P2_g=.trap.gz (22 of 402)
+[2025-11-05 18:29:12] Importing $files.Un2LeXg7sw0ups0j88WvbZ2C9KM=.trap.gz (23 of 402)
+[2025-11-05 18:29:12] Importing $files.VsW-JSHtZFTnrzAYcHSHjw6tuqE=.trap.gz (24 of 402)
+[2025-11-05 18:29:12] Importing $files.WMJdwogs3yM3S4bDh9uXl1ot8W8=.trap.gz (25 of 402)
+[2025-11-05 18:29:12] Importing $files.WQBSNRVkqaNVK4CyYdy6aHYPPos=.trap.gz (26 of 402)
+[2025-11-05 18:29:12] Importing $files.X0Pyqul7viCsNgHP7BIa6oiw0bw=.trap.gz (27 of 402)
+[2025-11-05 18:29:12] Importing $files.XbJY9ajfEchOQ-LCT-Beb44-VoA=.trap.gz (28 of 402)
+[2025-11-05 18:29:12] Importing $files.ZxFY8sv28TzUrft2OGlMA9op-XM=.trap.gz (29 of 402)
+[2025-11-05 18:29:12] Importing $files.ZyHCRT9veOrgkFX9A65MEFD6bIs=.trap.gz (30 of 402)
+[2025-11-05 18:29:12] Importing $files._A52HhoOD9KsMWbXqFXVDUKenHs=.trap.gz (31 of 402)
+[2025-11-05 18:29:12] Importing $files._k_QxsJtaNIxSGsjDbByd9wXkQE=.trap.gz (32 of 402)
+[2025-11-05 18:29:12] Importing $files.bACrmu5Gh6BvV4IIw5iA_LgrcLA=.trap.gz (33 of 402)
+[2025-11-05 18:29:12] Importing $files.dII4XYIQJaQD4fextswRaDS8Vys=.trap.gz (34 of 402)
+[2025-11-05 18:29:12] Importing $files.g_a9GFD1Zosmo845SH0tSJcK2j8=.trap.gz (35 of 402)
+[2025-11-05 18:29:12] Importing $files.i4Kdne_W6MHBWHEcDECv3HgXgm8=.trap.gz (36 of 402)
+[2025-11-05 18:29:12] Importing $files.jcbIb7wg3GmT3Nd5MgwLW7hczsc=.trap.gz (37 of 402)
+[2025-11-05 18:29:12] Importing $files.kam98UX9HnCPrrqo1OCaaHxCQG8=.trap.gz (38 of 402)
+[2025-11-05 18:29:12] Importing $files.nLwfQHYZLbyfExoq9aq7-TNveVE=.trap.gz (39 of 402)
+[2025-11-05 18:29:12] Importing $files.p7uN3TwdSzKJ-y9BhDyelnLe8-o=.trap.gz (40 of 402)
+[2025-11-05 18:29:12] Importing $files.pXlshMWb8-BlIqlmK9C8gj1tHyg=.trap.gz (41 of 402)
+[2025-11-05 18:29:12] Importing $files.pZ61wM5ZGaUj1usZ5w8zWCPbCPA=.trap.gz (42 of 402)
+[2025-11-05 18:29:12] Importing $files.qPDdXEQTRowE5Fa1cox9wCYlGrE=.trap.gz (43 of 402)
+[2025-11-05 18:29:12] Importing $files.rrNxhiBnJ6MBD-5pYJTTwXKR3Sw=.trap.gz (44 of 402)
+[2025-11-05 18:29:12] Importing $files.tMVFU02wG0PpRNqbZxY3h0ysw4s=.trap.gz (45 of 402)
+[2025-11-05 18:29:12] Importing $files.w6KvKdf5AuId7fOcRn2rkymRwm4=.trap.gz (46 of 402)
+[2025-11-05 18:29:12] Importing $files.ydX1wZjkQiSDEZOZi4snkLKZ4Wg=.trap.gz (47 of 402)
+[2025-11-05 18:29:12] Importing $files.z1LZyUlccUGnD5MhEpRw5r8XGwg=.trap.gz (48 of 402)
+[2025-11-05 18:29:12] Importing $flags.aSo6qncDOcglMQ7xkL01-dfHL5k=.trap.gz (49 of 402)
+[2025-11-05 18:29:12] Importing $interpreter3.w5JWL8oiXOv0BDUZArVenGQfmDU=.trap.gz (50 of 402)
+[2025-11-05 18:29:12] Importing $stdlib_33.xbANIAqQUqlu5fiqME-DdLdjz54=.trap (51 of 402)
+[2025-11-05 18:29:12] Importing 00.py.zG70c4QF8WRR3YGycZ4Tfgk1H_8=.trap.gz (52 of 402)
+[2025-11-05 18:29:12] Importing 01.py.UZKFeGm8ZT4Qv0j6nq0hQVUe_Pk=.trap.gz (53 of 402)
+[2025-11-05 18:29:12] Importing ElementPath.py.V5fsjbE7Uaf8XziLjPn0QvP-5RM=.trap.gz (54 of 402)
+[2025-11-05 18:29:12] Importing ElementTree.py.gSWVX6TwjrlILH42Ck24uqEN3LI=.trap.gz (55 of 402)
+[2025-11-05 18:29:13] Importing __future__.py.ix-mDGdJE_vg4Jr64As90oeKpCA=.trap.gz (56 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.-WpUjJ7AXwSE4OjhMngvavMIHcU=.trap.gz (57 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.0T4LWtMjjvqHO5xRT1CjOrcjjb8=.trap.gz (58 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.1d446CXO-Ety4N1xfpHkcDJbGOs=.trap.gz (59 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.3eC8VuLI7iPRzg3LFkibYgjZoJA=.trap.gz (60 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.4HOf35xzbGbiA_y5d80eKRRcPws=.trap.gz (61 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.6TuJBmXCd7o6rZRKi-ijhDfKIVw=.trap.gz (62 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.78bp6GGmrGVEuZJjL1aENQh3guQ=.trap.gz (63 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.923QQqWbXrSV9Hj0wCg2DUOUjXI=.trap.gz (64 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.Aathf9-BiM1xx77WBzTSBcg1x1A=.trap.gz (65 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.Ao6jcOFq76gACycsv9MHTF5l6GY=.trap.gz (66 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.BAhyaFqY_XvfMH_EJnFIPIgil78=.trap.gz (67 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.C-lJTq5gRPSU2eyEFRuZx5GWQug=.trap.gz (68 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.NKsnwxwz2u8lHJAOtGbLbsCoAb4=.trap.gz (69 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.QzGpLqOM9wQX-3TDPPn45cBfogc=.trap.gz (70 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.RE8fcaMjnxQe2JJYltJWkV4WLak=.trap.gz (71 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.W_pVR7v1mao-5jOpyg7riO1d8mo=.trap.gz (72 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.Xn6I3kEHkzqBOlZ4Kitjf2ENnAE=.trap.gz (73 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.d8QE35ezWXx-8P5S7cSHNjL4fUM=.trap.gz (74 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.dTcnnTZ72bnIJZJ0IzFyUFX7kD4=.trap.gz (75 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.heIYulWARryLzbWvTKeiTvVvZuY=.trap.gz (76 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.kN7AS-C5QfCiyUkDzr7ekOrXJto=.trap.gz (77 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.mot3HH7frTgStrw3Up-bHAPe18Q=.trap.gz (78 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.qPNNK-qZ-LrrRulnEKTlLX_e_fI=.trap.gz (79 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.xCDJ9yWJoaqHRFx00oEHOMQVSHo=.trap.gz (80 of 402)
+[2025-11-05 18:29:13] Importing __init__.py.y1AeOX_xY4cY4cN2LeG0_hthIxs=.trap.gz (81 of 402)
+[2025-11-05 18:29:13] Importing __pycache__.wvVuUdNtxh-AbgwJU-G0qDhsZWA=.trap.gz (82 of 402)
+[2025-11-05 18:29:13] Importing _abc.bWCEl0V_KegJ-iTKQwsPFMExP-8=.trap.gz (83 of 402)
+[2025-11-05 18:29:13] Importing _aix.py.5pN8oLwpfyfNg0zFoVuE2tW3M-U=.trap.gz (84 of 402)
+[2025-11-05 18:29:13] Importing _aix_support.py.THBfynvMwa3cFNSvHxr72KL-xQE=.trap.gz (85 of 402)
+[2025-11-05 18:29:13] Importing _ast.FHlCFJb8wG3th6JQYDaP-9YC8Cc=.trap.gz (86 of 402)
+[2025-11-05 18:29:13] Importing _asyncio.TkM9I3uguTWdxpiyGlFipg_HkoM=.trap.gz (87 of 402)
+[2025-11-05 18:29:13] Importing _base.py.r4-8clW1SdAJXUZY1DLMqGTFSPM=.trap.gz (88 of 402)
+[2025-11-05 18:29:13] Importing _bisect.5mkN8A9k3BdfA5gvBa77conl8SM=.trap.gz (89 of 402)
+[2025-11-05 18:29:13] Importing _blake2.FKk9fB_8NZA6NocH5D53ZMANgQk=.trap.gz (90 of 402)
+[2025-11-05 18:29:13] Importing _bootlocale.py.Bb8cR9Ep8LPUUrFUKFSEGQ507bo=.trap.gz (91 of 402)
+[2025-11-05 18:29:13] Importing _bootstrap.py.30eKFVD4EhORfCOA3PnHBU7PRAc=.trap.gz (92 of 402)
+[2025-11-05 18:29:13] Importing _bootstrap_external.py.5mhGtAZkgeoK4pvCT7_I23utd-s=.trap.gz (93 of 402)
+[2025-11-05 18:29:13] Importing _bootsubprocess.py.mNP0BTmjf0msCxppPDEWb2blBbE=.trap.gz (94 of 402)
+[2025-11-05 18:29:13] Importing _bz2.a08oljk2UpI-zbNJ8RvXl3Bxc_8=.trap.gz (95 of 402)
+[2025-11-05 18:29:13] Importing _codecs.vIErYkpmeeYd5AQvxeU_8AW7cME=.trap.gz (96 of 402)
+[2025-11-05 18:29:13] Importing _collections.NIx0A-BHuCRmIC9M8kZ0CLNUeNA=.trap.gz (97 of 402)
+[2025-11-05 18:29:13] Importing _collections_abc.py.IjBs0JBRRnhlmutQjnjCBrvYzcI=.trap.gz (98 of 402)
+[2025-11-05 18:29:13] Importing _compat_pickle.py.wVuKenJJGUnYdgbWx47BQ9x3yoQ=.trap.gz (99 of 402)
+[2025-11-05 18:29:13] Importing _compression.py.gj-rtOSni5Z2--Cbo4xIWZ0WsE4=.trap.gz (100 of 402)
+[2025-11-05 18:29:13] Importing _contextvars.-8qjOGnFInC4636iTSNU76yK0m4=.trap.gz (101 of 402)
+[2025-11-05 18:29:13] Importing _ctypes.oLF5rR-PxxF62bdTPD4aywJ5ClU=.trap.gz (102 of 402)
+[2025-11-05 18:29:13] Importing _datetime.exSnWN4P7fRKaeGUjgK8Yte3rWM=.trap.gz (103 of 402)
+[2025-11-05 18:29:13] Importing _decimal.BU4O6DiCNE2DLOhrD0b_JUY7veo=.trap.gz (104 of 402)
+[2025-11-05 18:29:13] Importing _elementtree.-uJuMoDeXpcloGDJY1wKmvRniJ0=.trap.gz (105 of 402)
+[2025-11-05 18:29:13] Importing _encoded_words.py.NwLLSax8QLqQFu9m9noi8c0djdI=.trap.gz (106 of 402)
+[2025-11-05 18:29:13] Importing _endian.py.DOgWl3s4x1femCb4hqrPiH6GYJQ=.trap.gz (107 of 402)
+[2025-11-05 18:29:13] Importing _functools.wbGo1hwh2zYt1oUlyI78M0NnzFw=.trap.gz (108 of 402)
+[2025-11-05 18:29:13] Importing _hashlib.rJQRTmsgtkFRuiqxp5ZDaoahKf0=.trap.gz (109 of 402)
+[2025-11-05 18:29:13] Importing _heapq.-rH9l4I6XfPgcUmnUMCGyVewcS4=.trap.gz (110 of 402)
+[2025-11-05 18:29:13] Importing _imp.tIM5AVeZE9u3FdgQY5Ngrypl1oY=.trap.gz (111 of 402)
+[2025-11-05 18:29:13] Importing _io.2lnlT7lE7NgiVVLM3pB7DCTuuac=.trap.gz (112 of 402)
+[2025-11-05 18:29:13] Importing _locale.4k6zjgx_bipw8nVlaCbvEW517mw=.trap.gz (113 of 402)
+[2025-11-05 18:29:13] Importing _lzma.FNsOey_AsRfN2ths0ZjkYd2Y4f0=.trap.gz (114 of 402)
+[2025-11-05 18:29:13] Importing _md5.6alE3WQPNUxFJhIO33CXtWA2j-E=.trap.gz (115 of 402)
+[2025-11-05 18:29:13] Importing _multiprocessing.Aga88lANSuRb7wIdl_-l_2ubeYk=.trap.gz (116 of 402)
+[2025-11-05 18:29:13] Importing _opcode.MYxiyeA2yT57htvGloKDAFb--Sk=.trap.gz (117 of 402)
+[2025-11-05 18:29:13] Importing _operator.McddqWtKhzAJ6R6Rkcfaacc9sBE=.trap.gz (118 of 402)
+[2025-11-05 18:29:13] Importing _osx_support.py.AlkQZhk7DKVYAn5FMzDXhGv35Lc=.trap.gz (119 of 402)
+[2025-11-05 18:29:13] Importing _parseaddr.py.ABTmLFccW18IfvzGuIM9t2NAapA=.trap.gz (120 of 402)
+[2025-11-05 18:29:13] Importing _pickle.pBJNm9-Yz7xjtJ7FGUKO-A4fnSk=.trap.gz (121 of 402)
+[2025-11-05 18:29:13] Importing _policybase.py.3atTdkpTkQmMvYsZu9cZuNDceAw=.trap.gz (122 of 402)
+[2025-11-05 18:29:13] Importing _posixshmem.-C80FmyR2kf4PHMw9aMoZiu4tjA=.trap.gz (123 of 402)
+[2025-11-05 18:29:13] Importing _posixsubprocess.eUcRLfSZVxUWKROmbAClHh05LhY=.trap.gz (124 of 402)
+[2025-11-05 18:29:13] Importing _py_abc.py.0-ET-9bPtaIQdin6MYLOGU0pL7s=.trap.gz (125 of 402)
+[2025-11-05 18:29:13] Importing _pydecimal.py.-um5ZnucFHTP3B7Os2DgivmRrxE=.trap.gz (126 of 402)
+[2025-11-05 18:29:13] Importing _queue.OvLPvFXuoCLlMAaiZEYj92eoJ_0=.trap.gz (127 of 402)
+[2025-11-05 18:29:13] Importing _random.yBZvGppPpE2ltY4kwRQbkMVRGtg=.trap.gz (128 of 402)
+[2025-11-05 18:29:13] Importing _sha1.kenyeTYl83OdMvz3bvmRZ23knZ8=.trap.gz (129 of 402)
+[2025-11-05 18:29:13] Importing _sha256.C8iYMBI00ZtRQEd0H7ccGKSnTjU=.trap.gz (130 of 402)
+[2025-11-05 18:29:13] Importing _sha3.ADIJeSfNqhvaIkPxN33D_P5upMA=.trap.gz (131 of 402)
+[2025-11-05 18:29:14] Importing _sha512.OVnsndyEfjOVQWJZB86mIODBlFw=.trap.gz (132 of 402)
+[2025-11-05 18:29:14] Importing _signal._jf50mSfFUjzTAh_0ANVUqp1Hx0=.trap.gz (133 of 402)
+[2025-11-05 18:29:14] Importing _socket.ipaxZ5L6enCnFq4sZXRL46CumWo=.trap.gz (134 of 402)
+[2025-11-05 18:29:14] Importing _sre.QvFXoevLRrZ0BRs8qFylsgq683Q=.trap.gz (135 of 402)
+[2025-11-05 18:29:14] Importing _ssl.-Jcx-slgqtS3MvQ5AYS5ghVtXvM=.trap.gz (136 of 402)
+[2025-11-05 18:29:14] Importing _stat.FsJFdcmTO5bpMsFa0uHYogADhtI=.trap.gz (137 of 402)
+[2025-11-05 18:29:14] Importing _statistics.9WMSIPdZDHSmhc2A79qofbvGPMU=.trap.gz (138 of 402)
+[2025-11-05 18:29:14] Importing _string.tWyER3LxqPU49ChBe5ydUWfdFUo=.trap.gz (139 of 402)
+[2025-11-05 18:29:14] Importing _struct.7SZqQy-qbJbGwTdJQISk0qeCGA4=.trap.gz (140 of 402)
+[2025-11-05 18:29:14] Importing _testcapi.EZrogKiihzEvT97sGwH_TFxGmcA=.trap.gz (141 of 402)
+[2025-11-05 18:29:14] Importing _testinternalcapi.knsaszMewqltUf2Q2UmCG7INWoE=.trap.gz (142 of 402)
+[2025-11-05 18:29:14] Importing _thread.UK10-650LzD49LjreOiex2pj5GM=.trap.gz (143 of 402)
+[2025-11-05 18:29:14] Importing _threading_local.py.np8ygqtlK_lrOvNXs1jFQbWBEiA=.trap.gz (144 of 402)
+[2025-11-05 18:29:14] Importing _tkinter.IthE1DQn_EMHbdkAXKx5IYsQ1SA=.trap.gz (145 of 402)
+[2025-11-05 18:29:14] Importing _tracemalloc.Z6FpoZDVHNnQi9-s-Zz2hPEAb_Q=.trap.gz (146 of 402)
+[2025-11-05 18:29:14] Importing _warnings.v_SqYSWqfYsP61A1CqeoyXlO26U=.trap.gz (147 of 402)
+[2025-11-05 18:29:14] Importing _weakref.N-vAvSS6JIoEm_lTjCMJJNR4Rco=.trap.gz (148 of 402)
+[2025-11-05 18:29:14] Importing _weakrefset.py.hyoAuv1fu5m4stMvMKQ2YMIHmy0=.trap.gz (149 of 402)
+[2025-11-05 18:29:14] Importing abc.py.EClkK_qXk5007jo1H4jCWo_80uM=.trap.gz (150 of 402)
+[2025-11-05 18:29:14] Importing abc.py.vi69NIWdcrCOukHHJgtPXrxNtfk=.trap.gz (151 of 402)
+[2025-11-05 18:29:14] Importing abc.py.xxEl_aF4o0a1FyjINnBqDar3AMw=.trap.gz (152 of 402)
+[2025-11-05 18:29:14] Importing aliases.py.XtKVAf-daf3M7sUZrMvZ5JCDCpk=.trap.gz (153 of 402)
+[2025-11-05 18:29:14] Importing argparse.py.8akJEsul24NmHZhEdtGVh-tN_LY=.trap.gz (154 of 402)
+[2025-11-05 18:29:14] Importing array.AikePbimcbwD6Ev9Ba9GM9G_yJM=.trap.gz (155 of 402)
+[2025-11-05 18:29:14] Importing ast.py.1otiFQbu0PAjl20Z2ddbqP4oz74=.trap.gz (156 of 402)
+[2025-11-05 18:29:14] Importing async_case.py.n4mlm2Xb2J6p2dowcQq18cqeyZE=.trap.gz (157 of 402)
+[2025-11-05 18:29:14] Importing asyncio.ArK5DHo_Pd-9UOwNDFXWq2JYD9s=.trap.gz (158 of 402)
+[2025-11-05 18:29:14] Importing atexit.Y6aPJ59zPDoxBMatj9DDD5ORt08=.trap.gz (159 of 402)
+[2025-11-05 18:29:14] Importing base64.py.NhWOrcioLmr2LOowFFiDFs2ykb8=.trap.gz (160 of 402)
+[2025-11-05 18:29:14] Importing base64mime.py.pV_fleNnGwj5vxkBYjipt99v1mg=.trap.gz (161 of 402)
+[2025-11-05 18:29:14] Importing base_events.py.4I0BnQ2t-q3TnTfISVFNsSYPT4g=.trap.gz (162 of 402)
+[2025-11-05 18:29:14] Importing base_futures.py.txdq32T-Y1LUIUzEb_AiyUeSPJ8=.trap.gz (163 of 402)
+[2025-11-05 18:29:14] Importing base_subprocess.py.O-rEJSBlCDhq1czKeKaxeMDWQyM=.trap.gz (164 of 402)
+[2025-11-05 18:29:14] Importing base_tasks.py.bXUvFylKakP-59DZJ3Ycr9iXVew=.trap.gz (165 of 402)
+[2025-11-05 18:29:14] Importing bdb.py.2cE9D_ggA4qjoWDDa0BDMGHoPRg=.trap.gz (166 of 402)
+[2025-11-05 18:29:14] Importing binascii.355TTWVLBasooF6aCN-tcmV5iis=.trap.gz (167 of 402)
+[2025-11-05 18:29:14] Importing bisect.py.h1030rwJ90ouIX_PRevB01pNwLc=.trap.gz (168 of 402)
+[2025-11-05 18:29:14] Importing btm_matcher.py.xu1JAILSOtUCuFaRHzJ1b6BdWeY=.trap.gz (169 of 402)
+[2025-11-05 18:29:14] Importing btm_utils.py.7YbomZgYSb9tL0fXuSvIMZ1elho=.trap.gz (170 of 402)
+[2025-11-05 18:29:14] Importing builtins.SJ_1KOVeRurvihcAQVtMaFe83IY=.trap.gz (171 of 402)
+[2025-11-05 18:29:14] Importing bz2.py.WAKmfLGU2uUNPi1bO-9ucRj-4Jo=.trap.gz (172 of 402)
+[2025-11-05 18:29:14] Importing calendar.py.rFzbEJxa1uYUd-wfoH2bWtY0TpI=.trap.gz (173 of 402)
+[2025-11-05 18:29:14] Importing case.py.kVgO72lVnmMhmD4GmPIwdY6DQto=.trap.gz (174 of 402)
+[2025-11-05 18:29:14] Importing ccompiler.py.luu6JsNZj-5JV1_w54K_xy3YqSY=.trap.gz (175 of 402)
+[2025-11-05 18:29:14] Importing charset.py.Uu7sw-Xm3OX64qpFmrGX-pKUgQw=.trap.gz (176 of 402)
+[2025-11-05 18:29:14] Importing client.py.ozV6yHPL9eaxQMfJv3CvlW6eBw8=.trap.gz (177 of 402)
+[2025-11-05 18:29:14] Importing client.py.sqAAtJU633kpWff6ep3lWxdDuTo=.trap.gz (178 of 402)
+[2025-11-05 18:29:14] Importing cmd.py.vWHN27CMGKDodvTXf6hg_YAs_gY=.trap.gz (179 of 402)
+[2025-11-05 18:29:14] Importing code.py.ir8FmL0wWEZzVGOrpj6b_JRLU4w=.trap.gz (180 of 402)
+[2025-11-05 18:29:14] Importing codecs.py.eHKLrskWCJgRTl9x0AKumPRgJdA=.trap.gz (181 of 402)
+[2025-11-05 18:29:14] Importing codeop.py.vrr6Lc3APNM62ChGZ-2TdiFTqFk=.trap.gz (182 of 402)
+[2025-11-05 18:29:14] Importing collections.CFRndcN7Gkvv7FzXxmBfLlsSEZs=.trap.gz (183 of 402)
+[2025-11-05 18:29:14] Importing concurrent.D1TuMjA65UmtxxVUC66V5zSG53o=.trap.gz (184 of 402)
+[2025-11-05 18:29:14] Importing connection.py.IBoIUAvE7oS4u5rN5XtRrFyUNg8=.trap.gz (185 of 402)
+[2025-11-05 18:29:14] Importing constants.py.HwrxUpGHDPZ1OG0LDYYB0PlW7XU=.trap.gz (186 of 402)
+[2025-11-05 18:29:14] Importing constants.py.kq60-YmN7B4NJERttNjmMt8T0Hc=.trap.gz (187 of 402)
+[2025-11-05 18:29:14] Importing context.py.OX3iCBOqSQiKJnMSxKSe78v-fYE=.trap.gz (188 of 402)
+[2025-11-05 18:29:14] Importing contextlib.py.CIty4ub7X8m-rubU0QoB--_aXlE=.trap.gz (189 of 402)
+[2025-11-05 18:29:14] Importing contextvars.py.F8s0ljFydpe6EoFzhbr_FTzTeA8=.trap.gz (190 of 402)
+[2025-11-05 18:29:14] Importing copy.py.LRnoQCnjMmtYNZypNEc2y6f0Az4=.trap.gz (191 of 402)
+[2025-11-05 18:29:14] Importing copyreg.py.DvddQCyd2ARFV1WH0yilsVAH8O4=.trap.gz (192 of 402)
+[2025-11-05 18:29:14] Importing coroutines.py.AhbH1f4nKI95Sz-OUHGtrRXtTq8=.trap.gz (193 of 402)
+[2025-11-05 18:29:14] Importing ctypes.9MgGKaB1b3bKgjo58cmV9L0Baxc=.trap.gz (194 of 402)
+[2025-11-05 18:29:14] Importing datetime.py.FQs37LDushXIRHcuKWWfZxo5Ilk=.trap.gz (195 of 402)
+[2025-11-05 18:29:14] Importing debug.py.ytPvaDSvZyvNmjPCjPBVoUoNg1c=.trap.gz (196 of 402)
+[2025-11-05 18:29:14] Importing decimal.py.C6xJ1ipkKDKVAKyzGxlrFDV38-s=.trap.gz (197 of 402)
+[2025-11-05 18:29:14] Importing dep_util.py.S8N0iEHVWoZJ1oZ1fPmseCVoA7E=.trap.gz (198 of 402)
+[2025-11-05 18:29:14] Importing difflib.py.zUG9Uad4mcGAP8vhSJ8L0-VetJ4=.trap.gz (199 of 402)
+[2025-11-05 18:29:14] Importing dir_util.py.BjG1uOyGvaWYJLmuj_Glns2P9k0=.trap.gz (200 of 402)
+[2025-11-05 18:29:14] Importing dis.py.NdD5hqMywZSf6T2se25xfGUTicI=.trap.gz (201 of 402)
+[2025-11-05 18:29:14] Importing distutils.Hpv_O8u2z2QSH7EiA6fap0HVROA=.trap.gz (202 of 402)
+[2025-11-05 18:29:14] Importing doctest.py.HDl0fD2JHwfcoyUaBTIDICebsU0=.trap.gz (203 of 402)
+[2025-11-05 18:29:15] Importing driver.py.UVB3uvYfvk2sJEHM84tpf3_9oU0=.trap.gz (204 of 402)
+[2025-11-05 18:29:15] Importing dyld.py.DOsUz01e1xop4bmRTLLy017bhdw=.trap.gz (205 of 402)
+[2025-11-05 18:29:15] Importing dylib.py.wo8NS5MP3EqAquX6n56MHmBvy6c=.trap.gz (206 of 402)
+[2025-11-05 18:29:15] Importing email.XFw2UnXf4-cd--bUqIuhIxXNCDU=.trap.gz (207 of 402)
+[2025-11-05 18:29:15] Importing encoders.py.xSTqx4bOYw27_VfG4K1UfGAoDFM=.trap.gz (208 of 402)
+[2025-11-05 18:29:15] Importing encodings.2J_jmUxDGsw6Rw54zi5EpKZ5_MI=.trap.gz (209 of 402)
+[2025-11-05 18:29:15] Importing entities.py.c7Y8uujNH7365hWSgQKJfjt2kwg=.trap.gz (210 of 402)
+[2025-11-05 18:29:15] Importing enum.py.p8EbGBBHru9OX78G2GBjJBpGUOE=.trap.gz (211 of 402)
+[2025-11-05 18:29:15] Importing errno.6DYLtyNJxt3AtnqmU5OHaQvYxvI=.trap.gz (212 of 402)
+[2025-11-05 18:29:15] Importing error.py.NGUXjgPuEq2bxQqq5KEqSstMoew=.trap.gz (213 of 402)
+[2025-11-05 18:29:15] Importing errors.py.gSa31IcLAPQutW2-dLMxpYieQ4U=.trap.gz (214 of 402)
+[2025-11-05 18:29:15] Importing errors.py.qBfCIvHrwPnGV4-88z0HLyJkfEM=.trap.gz (215 of 402)
+[2025-11-05 18:29:15] Importing etree.vnpuxEOcmyBi-ogLS07YA3JuApg=.trap.gz (216 of 402)
+[2025-11-05 18:29:15] Importing events.py.EA1wRwngcwnucKwHUMX5OrMfEjU=.trap.gz (217 of 402)
+[2025-11-05 18:29:15] Importing exceptions.py.zW9oJAX3rFcRZiWzR-BT-o4KmXc=.trap.gz (218 of 402)
+[2025-11-05 18:29:15] Importing expat.py.2cZmnIdrxuIsYsElfiJBRqyDCvw=.trap.gz (219 of 402)
+[2025-11-05 18:29:15] Importing fancy_getopt.py.v7GvSg27WPWHh2WWANsifCun1CA=.trap.gz (220 of 402)
+[2025-11-05 18:29:15] Importing faulthandler._JdSiFK0B7UuB1lm21YQXLY7RKQ=.trap.gz (221 of 402)
+[2025-11-05 18:29:15] Importing feedparser.py.sfEWz3d7WgrA3mBzTlZfIsdp4D8=.trap.gz (222 of 402)
+[2025-11-05 18:29:15] Importing file_util.py.sgpvn61-3lh2AQ1scUNkCkVndmo=.trap.gz (223 of 402)
+[2025-11-05 18:29:15] Importing filelist.py.EreV2kQUAyJNmO_VuxQnPWiwnNM=.trap.gz (224 of 402)
+[2025-11-05 18:29:15] Importing fixer_util.py.V57hklEUcfCo3XeRGWb8hB0niec=.trap.gz (225 of 402)
+[2025-11-05 18:29:15] Importing fnmatch.py.YInu09e2mEF6fbylN69ycOFJhjk=.trap.gz (226 of 402)
+[2025-11-05 18:29:15] Importing forkserver.py.4_mE5dDJKMu-yIttBERXFzIM7Rg=.trap.gz (227 of 402)
+[2025-11-05 18:29:15] Importing format_helpers.py.6AFqpxyHHgC40iZO8oIu0LTT8U0=.trap.gz (228 of 402)
+[2025-11-05 18:29:15] Importing fractions.py.TUz4SL3JaZb67P8Xxg3bw6vZfB4=.trap.gz (229 of 402)
+[2025-11-05 18:29:15] Importing framework.py._GxPa3IGAxg075UQJ_6nJr1YFv8=.trap.gz (230 of 402)
+[2025-11-05 18:29:15] Importing ftplib.py.IkYp7O0fAt0is4KPqLWM_mr62Bo=.trap.gz (231 of 402)
+[2025-11-05 18:29:15] Importing functools.py.TMQdZ9Fee06wWJD0pQxP8aocE7k=.trap.gz (232 of 402)
+[2025-11-05 18:29:15] Importing futures.JAhFmpo28Vp-QjrmnIB9pwbz5HE=.trap.gz (233 of 402)
+[2025-11-05 18:29:15] Importing futures.py.dqNOAfK72xgM94zHPAh6egqnD1o=.trap.gz (234 of 402)
+[2025-11-05 18:29:15] Importing gc.GD-i6WkBlfCoUbOObgxAKom4aBo=.trap.gz (235 of 402)
+[2025-11-05 18:29:15] Importing genericpath.py.haGjuaIksWUP59oGP5A8LpaQrDE=.trap.gz (236 of 402)
+[2025-11-05 18:29:15] Importing getopt.py.EFcudROqer0XCFFkpeh_4MGW50M=.trap.gz (237 of 402)
+[2025-11-05 18:29:15] Importing gettext.py.4hUvBP1NbMAkrRQftHWlOU-wE-w=.trap.gz (238 of 402)
+[2025-11-05 18:29:15] Importing glob.py.4rWbm3DjTkldz28YJTOKbRq3-9c=.trap.gz (239 of 402)
+[2025-11-05 18:29:15] Importing grammar.py.4OKZpN-pfnOvCH4tJ3OoFU5qyYQ=.trap.gz (240 of 402)
+[2025-11-05 18:29:15] Importing grp.VLPZkbJA_fHzPntWpnvq7TE1A98=.trap.gz (241 of 402)
+[2025-11-05 18:29:15] Importing gzip.py.GppcOXYPXtxdvFd2s3fwTfUGNIQ=.trap.gz (242 of 402)
+[2025-11-05 18:29:15] Importing hashlib.py.PaRp_UvmOTdx3Jj0IYs3alwaDSo=.trap.gz (243 of 402)
+[2025-11-05 18:29:15] Importing header.py.qGoR2Z3PFMkPzjSMSUoAsrDX7MY=.trap.gz (244 of 402)
+[2025-11-05 18:29:15] Importing heapq.py.s9b5C3hX_ykkjSwmpdV-KpfacVc=.trap.gz (245 of 402)
+[2025-11-05 18:29:15] Importing hmac.py.moS-enNoc9mPfR02g2G4HYcqx_0=.trap.gz (246 of 402)
+[2025-11-05 18:29:15] Importing html.Ejg8D0vGzC8CWZC_5FjS3qZLzjM=.trap.gz (247 of 402)
+[2025-11-05 18:29:15] Importing http.-BKI1KbV9OB00zDF8175BTKji4c=.trap.gz (248 of 402)
+[2025-11-05 18:29:15] Importing importlib.eX_en-rx47cAmEmc2erDKHjN1As=.trap.gz (249 of 402)
+[2025-11-05 18:29:15] Importing inspect.py.zWxr4ikm_4gnTQJ7tYAT0fUYFHU=.trap.gz (250 of 402)
+[2025-11-05 18:29:15] Importing io.py.Zr6qx7QKvNXOeO5AbeYW_8SIgVI=.trap.gz (251 of 402)
+[2025-11-05 18:29:15] Importing ipaddress.py.ybY1a0gdwRzmt_Ab1HkMB8ChpUY=.trap.gz (252 of 402)
+[2025-11-05 18:29:15] Importing itertools.Hh-PFw8uvIknLXmlDurKY5XThKM=.trap.gz (253 of 402)
+[2025-11-05 18:29:15] Importing keyword.py.I_16B3U3lNUux3He5k5g1207PfU=.trap.gz (254 of 402)
+[2025-11-05 18:29:15] Importing lib2to3.g9K1IkPl2awBF1WHCCyKeVfWUUU=.trap.gz (255 of 402)
+[2025-11-05 18:29:15] Importing linecache.py.pocYAMxRMHW7_wLO7atqX7OpqQo=.trap.gz (256 of 402)
+[2025-11-05 18:29:15] Importing literals.py.ilp5n0jcAX2j6BZQgf_Ymq5Ox78=.trap.gz (257 of 402)
+[2025-11-05 18:29:15] Importing loader.py.GFQaDwyDiDq3SYiL1X7d4JE_pJA=.trap.gz (258 of 402)
+[2025-11-05 18:29:15] Importing locale.py.lRQNMF2OdbgW7rKZ45GIXAKLrqk=.trap.gz (259 of 402)
+[2025-11-05 18:29:15] Importing locks.py.RyVvzxfbqIF-mhLw3x9P0ypr8xY=.trap.gz (260 of 402)
+[2025-11-05 18:29:15] Importing log.py.67-aDobrAhWYCgH_LO3fzQgcKFA=.trap.gz (261 of 402)
+[2025-11-05 18:29:15] Importing log.py.brDxxxLVN_5mx6DanyCdqa0x06M=.trap.gz (262 of 402)
+[2025-11-05 18:29:15] Importing logging.lLaVVep8Q-sF8j4jE1F9IB3-heY=.trap.gz (263 of 402)
+[2025-11-05 18:29:15] Importing lzma.py.-Urxqh5xKevYy3tGBYNnT2WWFX0=.trap.gz (264 of 402)
+[2025-11-05 18:29:15] Importing machinery.py.vGpZew5evOejdh0dJM6HLjvGqRA=.trap.gz (265 of 402)
+[2025-11-05 18:29:15] Importing macholib.nHxA2qK4DlcpqRMk7FVSTIluJUc=.trap.gz (266 of 402)
+[2025-11-05 18:29:15] Importing main.py.KaxwphD9_DO83e6AHklARHf1CF8=.trap.gz (267 of 402)
+[2025-11-05 18:29:15] Importing marshal.FcFhobulYNPsUdDvRzTwwNbV71A=.trap.gz (268 of 402)
+[2025-11-05 18:29:15] Importing math.cSbkDkSmFqS8-GKcq1JTD1H3-_k=.trap.gz (269 of 402)
+[2025-11-05 18:29:15] Importing mbcs.py.z2d-jsvi1pQA39OSByL-WxISp80=.trap.gz (270 of 402)
+[2025-11-05 18:29:15] Importing message.py.LG8qZSxD7KTegWbLn_LPJ-fLuM8=.trap.gz (271 of 402)
+[2025-11-05 18:29:15] Importing mimetypes.py.Tov1v4MSl-R-6NRI2YjXL98wFXQ=.trap.gz (272 of 402)
+[2025-11-05 18:29:15] Importing multiprocessing.CI8VvX8nvLZy_PwekMgkZ_9PbiE=.trap.gz (273 of 402)
+[2025-11-05 18:29:15] Importing netrc.py._mJ5KBgGuPRUqiP7Whi_DW4eHcs=.trap.gz (274 of 402)
+[2025-11-05 18:29:15] Importing ntpath.py.m4r2Mk4lcvL0d-whYErL7zfW2So=.trap.gz (275 of 402)
+[2025-11-05 18:29:15] Importing nturl2path.py.MrWpRk0sWWJDZJWVySbHPsXeJsY=.trap.gz (276 of 402)
+[2025-11-05 18:29:15] Importing numbers.py.gyd_FUpaS448zuenj8k8lCou9aI=.trap.gz (277 of 402)
+[2025-11-05 18:29:15] Importing opcode.py.vSFLX61ssDm7bar5jz5TFSvQRcQ=.trap.gz (278 of 402)
+[2025-11-05 18:29:15] Importing operator.py.RQwRIoEynKUcYSlP2BYVEvkHE44=.trap.gz (279 of 402)
+[2025-11-05 18:29:15] Importing optparse.py.14T9oaQirdHgYXRp3JlLNRUXwBw=.trap.gz (280 of 402)
+[2025-11-05 18:29:15] Importing os.py.V1OMYlf6lfS8xsEJqRbUnz5_5II=.trap.gz (281 of 402)
+[2025-11-05 18:29:15] Importing parse.py.MsX7laGmAxhox7GddEU4nrjrQtQ=.trap.gz (282 of 402)
+[2025-11-05 18:29:15] Importing parse.py.U1WF8mkEE0PdQLv56qgrdHRSmeE=.trap.gz (283 of 402)
+[2025-11-05 18:29:15] Importing parser.py.THcKVJmpQlFDFHudeoiySYtCbS0=.trap.gz (284 of 402)
+[2025-11-05 18:29:15] Importing parsers.4Ae1mehRUjuxqwn6_7uAhRVLrlk=.trap.gz (285 of 402)
+[2025-11-05 18:29:15] Importing patcomp.py.jR5KggTW5d48LQtgHW-N0xz6ZNU=.trap.gz (286 of 402)
+[2025-11-05 18:29:15] Importing pdb.py.pcFY5Aw6L6R1SgyMT5x5ZNlFl6U=.trap.gz (287 of 402)
+[2025-11-05 18:29:15] Importing pgen.py.IJeP9StmYiiN7ExQf29AHWL8Bnw=.trap.gz (288 of 402)
+[2025-11-05 18:29:15] Importing pgen2.3H6LDJKdqvILW8GxoYJMCIpdOns=.trap.gz (289 of 402)
+[2025-11-05 18:29:15] Importing pickle.py.8G31iaVyefs4ysArsrmM7S937mg=.trap.gz (290 of 402)
+[2025-11-05 18:29:16] Importing pkgutil.py.hX8sUPhZSw9LLWVA7cC8BeNEOsA=.trap.gz (291 of 402)
+[2025-11-05 18:29:16] Importing platform.py.qDFffzBYb4IJENnsboT1U4kEmEI=.trap.gz (292 of 402)
+[2025-11-05 18:29:16] Importing plistlib.py.nbIHaSplyf1_SUCSFvI00JefhfM=.trap.gz (293 of 402)
+[2025-11-05 18:29:16] Importing posix.87LwyHzxLR8Cce2wc61NywXfdoc=.trap.gz (294 of 402)
+[2025-11-05 18:29:16] Importing posixpath.py._9SbECLyW5bPv5dihzSCatigg1I=.trap.gz (295 of 402)
+[2025-11-05 18:29:16] Importing pprint.py.3Oym41X5j_Gih9F29Yw3uUFU3m0=.trap.gz (296 of 402)
+[2025-11-05 18:29:16] Importing proactor_events.py.qce8-YtJFgSulgGNHLzDl08Xm0I=.trap.gz (297 of 402)
+[2025-11-05 18:29:16] Importing process.py.HTxNb2fuc1otlOQurFt-Ze1yRCE=.trap.gz (298 of 402)
+[2025-11-05 18:29:16] Importing process.py.conwgqUgHg4SoQapEy88bwokUUc=.trap.gz (299 of 402)
+[2025-11-05 18:29:16] Importing protocols.py.nPLD5RGDytbRa58v9-MWK4wYX6E=.trap.gz (300 of 402)
+[2025-11-05 18:29:16] Importing pwd.HmwKDesUXUqGQHMVXm1g0ePve1k=.trap.gz (301 of 402)
+[2025-11-05 18:29:16] Importing py_compile.py.NuarPfUJIMSaLbtyO-U_bbATtpQ=.trap.gz (302 of 402)
+[2025-11-05 18:29:16] Importing pydoc.py.GfJvjIAUA_Oam26rvXkoQXf3-MA=.trap.gz (303 of 402)
+[2025-11-05 18:29:16] Importing pyexpat.I0RLkghMJomqVed81ZIj6h0ITkk=.trap.gz (304 of 402)
+[2025-11-05 18:29:16] Importing pygram.py.XF-U-HdM4Ek7UHvLEa00bppDkIA=.trap.gz (305 of 402)
+[2025-11-05 18:29:16] Importing pytree.py.EnuTeeL4Xe_Q29xp90YbduCxERI=.trap.gz (306 of 402)
+[2025-11-05 18:29:16] Importing queue.py.WM-Nc5iLKLs7I-l0px5W2VzuXmM=.trap.gz (307 of 402)
+[2025-11-05 18:29:16] Importing queues.py.Qa_Dl0sLpCN-BmpT0SfqdrsJHKM=.trap.gz (308 of 402)
+[2025-11-05 18:29:16] Importing queues.py.dK7koI6rxxbuk-iN8InhD6G9-Vw=.trap.gz (309 of 402)
+[2025-11-05 18:29:16] Importing quopri.py.VAhsP6FcKyg7oyw9BzqrodNeEmU=.trap.gz (310 of 402)
+[2025-11-05 18:29:16] Importing quoprimime.py.eFjLhGEu-qmlmAHwRTEFIKuPFTU=.trap.gz (311 of 402)
+[2025-11-05 18:29:16] Importing random.py.TMEAyeH56afvnNaxrUG5Iv9hZ_k=.trap.gz (312 of 402)
+[2025-11-05 18:29:16] Importing re.py.JahMi-ikVOQHpT_0FwXKQ1NBFMc=.trap.gz (313 of 402)
+[2025-11-05 18:29:16] Importing readline.hSbANrDkn39tQH6OJYmmRkmCzTg=.trap.gz (314 of 402)
+[2025-11-05 18:29:16] Importing reduction.py.Pj2KaOWACPrHjmluCxY4M2tmnrY=.trap.gz (315 of 402)
+[2025-11-05 18:29:16] Importing refactor.py.knQxOUKHirLL6CTGSMnfD7kYwJE=.trap.gz (316 of 402)
+[2025-11-05 18:29:16] Importing reprlib.py.tQm7khDB5JRDEk2DhleYbpYbKBs=.trap.gz (317 of 402)
+[2025-11-05 18:29:16] Importing request.py.59QYArhQfYUm76LiB62t0OYb-Ac=.trap.gz (318 of 402)
+[2025-11-05 18:29:16] Importing resource_sharer.py.LccOECftk8uYRpJ-LvyJKHtFZxQ=.trap.gz (319 of 402)
+[2025-11-05 18:29:16] Importing resource_tracker.py.sHZRPHzTVfkSNnIlnG5lYLEPkWc=.trap.gz (320 of 402)
+[2025-11-05 18:29:16] Importing response.py.sy7EY_buy5aXfQMsns7xT1vCSXc=.trap.gz (321 of 402)
+[2025-11-05 18:29:16] Importing result.py.jxw8v-nq-W5h-p0nKPwhy7r-IsE=.trap.gz (322 of 402)
+[2025-11-05 18:29:16] Importing runner.py.dZikHogdQ24xwr59a0yvSNyqWdw=.trap.gz (323 of 402)
+[2025-11-05 18:29:16] Importing runners.py.iZcWT7SsE1fVbtKNzeUgmcUdtF0=.trap.gz (324 of 402)
+[2025-11-05 18:29:16] Importing runpy.py.tkPUanore3q9pgJSkPCPbncWPA4=.trap.gz (325 of 402)
+[2025-11-05 18:29:16] Importing select.61khG7rWw7lHh1A36tiFSNWr1xM=.trap.gz (326 of 402)
+[2025-11-05 18:29:16] Importing selector_events.py.MMYxsDA1wwmGaacCxVxmAWYNHco=.trap.gz (327 of 402)
+[2025-11-05 18:29:16] Importing selectors.py.HA2h5NpDOThueuTz9d1ypO1Wr2I=.trap.gz (328 of 402)
+[2025-11-05 18:29:16] Importing server.py.9V2AZSgrkE1fZHHUgHwqXrB0VbU=.trap.gz (329 of 402)
+[2025-11-05 18:29:16] Importing shlex.py.cH6UQMzomiBVvIAz8lnXJPstS_M=.trap.gz (330 of 402)
+[2025-11-05 18:29:16] Importing shutil.py.xg2Pn1x1oDU4iqQQCeKixQfsLkQ=.trap.gz (331 of 402)
+[2025-11-05 18:29:16] Importing signal.py.2E-AQOiXHatKPf1GaIZxVA57_wk=.trap.gz (332 of 402)
+[2025-11-05 18:29:16] Importing signals.py.y2kpwzPvFh3ptnk_MKIK8STjj1g=.trap.gz (333 of 402)
+[2025-11-05 18:29:16] Importing socket.py.lt1Cmz2RZ0cXePs6DPeC3BZ-8ek=.trap.gz (334 of 402)
+[2025-11-05 18:29:16] Importing socketserver.py.XvEN5o3Ku4TdBjrHOOh4j8b_Jms=.trap.gz (335 of 402)
+[2025-11-05 18:29:16] Importing sourceLocationPrefix.trap.gz (336 of 402)
+[2025-11-05 18:29:16] Importing spawn.py.5CdN3aSVFGhBzA0GRdFkV3mobA0=.trap.gz (337 of 402)
+[2025-11-05 18:29:16] Importing spawn.py.cUAPGifikoBsEZVpd74FJDX90YI=.trap.gz (338 of 402)
+[2025-11-05 18:29:16] Importing sre_compile.py.L25uk0s1bI3A3yRCqKcK_MJWehs=.trap.gz (339 of 402)
+[2025-11-05 18:29:16] Importing sre_constants.py.tn54y9WuhVl0_lThAC_l9NZGiKA=.trap.gz (340 of 402)
+[2025-11-05 18:29:16] Importing sre_parse.py.Q5pfAGZ5MZgoCmAP8ohqI2UpO4A=.trap.gz (341 of 402)
+[2025-11-05 18:29:16] Importing ssl.py.63sSXfpFkuhzPnWzxOYnGpnWe0A=.trap.gz (342 of 402)
+[2025-11-05 18:29:16] Importing sslproto.py.oqWyv_q69YjWdz1v4pb7SQageuI=.trap.gz (343 of 402)
+[2025-11-05 18:29:16] Importing staggered.py.L2uB_vl675CylrPxpLwheBuwUlM=.trap.gz (344 of 402)
+[2025-11-05 18:29:16] Importing stat.py.iw7_g9ChDtK9-bOG1w5Dj4MuAYs=.trap.gz (345 of 402)
+[2025-11-05 18:29:16] Importing statistics.py.ot0xBKoTRVB3tuFucBzCwjDp7QA=.trap.gz (346 of 402)
+[2025-11-05 18:29:16] Importing streams.py.-KRmu1JiYrHNuPDXJzA2eVN-ZjQ=.trap.gz (347 of 402)
+[2025-11-05 18:29:16] Importing string.py.5jBB3KvS4de8aOvXHmyq7AH1bnc=.trap.gz (348 of 402)
+[2025-11-05 18:29:16] Importing struct.py.k-bLL8Uwv-UqML6m7xZDg-BU5Ps=.trap.gz (349 of 402)
+[2025-11-05 18:29:16] Importing subprocess.py.2FjxjPKZwyKQYI5xSHjrJRS8jCM=.trap.gz (350 of 402)
+[2025-11-05 18:29:17] Importing subprocess.py.J_9DTyCKEHHX-qRT1j3cm9a3LKM=.trap.gz (351 of 402)
+[2025-11-05 18:29:17] Importing suite.py.IEDLLULYvHAbC8V41IQ9wAAT5xA=.trap.gz (352 of 402)
+[2025-11-05 18:29:17] Importing support.TUEQ7QaUup1yGURUJ9i52Y7PWT4=.trap.gz (353 of 402)
+[2025-11-05 18:29:17] Importing sys.sPQGY8y6z_z5mOhATnHJb5W-TrA=.trap.gz (354 of 402)
+[2025-11-05 18:29:17] Importing sysconfig.py.IKqjf2DnObqMsjo4LBKq2EOF6jE=.trap.gz (355 of 402)
+[2025-11-05 18:29:17] Importing sysconfig.py.KJYamVg7Q_ftce43glf-WAXDesA=.trap.gz (356 of 402)
+[2025-11-05 18:29:17] Importing tarfile.py.Br8mvhMJmegD8irH45Ry4Fsm-80=.trap.gz (357 of 402)
+[2025-11-05 18:29:17] Importing tasks.py.iTFSYfvL3XqnhCkRK9DBktZU9Hs=.trap.gz (358 of 402)
+[2025-11-05 18:29:17] Importing tempfile.py.3MU6U3hC2_KI0Vl_CpfCKgjheJE=.trap.gz (359 of 402)
+[2025-11-05 18:29:17] Importing termios.3dXfKbYl-h5mFXM4pJHZLMxrImM=.trap.gz (360 of 402)
+[2025-11-05 18:29:17] Importing test.GkKsSvWiFV6_6uIpIT_6MrDXdDs=.trap.gz (361 of 402)
+[2025-11-05 18:29:17] Importing testresult.py.xRMmjPmZj-bSCHkH5AzkQNnNp7s=.trap.gz (362 of 402)
+[2025-11-05 18:29:17] Importing text_file.py.mQd9vCplZh-xtlJXr_qb3JvaXr0=.trap.gz (363 of 402)
+[2025-11-05 18:29:17] Importing textwrap.py.sBecuZ2yEvW_w8sJ25RFLWD4TRk=.trap.gz (364 of 402)
+[2025-11-05 18:29:17] Importing thread.py.Mh93W0eQIs76oUnRCV-pxSD2q9M=.trap.gz (365 of 402)
+[2025-11-05 18:29:17] Importing threading.py.R4L-KvHerG33l7agV-jtLGpmd8I=.trap.gz (366 of 402)
+[2025-11-05 18:29:17] Importing threads.py.1TTvM1P9Q3Ypro9HR-JA2c5QXC8=.trap.gz (367 of 402)
+[2025-11-05 18:29:17] Importing time.jwTVEgkNvWFsYkv0Q9cOBcnWIrg=.trap.gz (368 of 402)
+[2025-11-05 18:29:17] Importing tkinter.3yhKfo1DlbDxs8ouK2rcdRNSyzQ=.trap.gz (369 of 402)
+[2025-11-05 18:29:17] Importing token.py.Fjs0Y2JTR2Msfechp7SV93ITtTY=.trap.gz (370 of 402)
+[2025-11-05 18:29:17] Importing token.py.a32z4JbeGhWEjV6shmW_O5AA7ds=.trap.gz (371 of 402)
+[2025-11-05 18:29:17] Importing tokenize.py.YR_ylzwSddV2KybIofzPAAPcaw4=.trap.gz (372 of 402)
+[2025-11-05 18:29:17] Importing tokenize.py.cASE-lFuLO1z2vJgX3FK2dfZUjs=.trap.gz (373 of 402)
+[2025-11-05 18:29:17] Importing traceback.py.CBAcXyeJ4Ov9sF8ORRnusakK67A=.trap.gz (374 of 402)
+[2025-11-05 18:29:17] Importing tracemalloc.py.9WvcAR7E3gkpEYNcDOF1hlRY6Qg=.trap.gz (375 of 402)
+[2025-11-05 18:29:17] Importing transports.py.SoL_2ArFQqG4R62VDD0zWQ4mt7A=.trap.gz (376 of 402)
+[2025-11-05 18:29:17] Importing trsock.py.YsFnRkwa96zqcK_3buoAPyCnDj0=.trap.gz (377 of 402)
+[2025-11-05 18:29:17] Importing tty.py.Fmsia3P3DGbRUhxPKgn695sEegk=.trap.gz (378 of 402)
+[2025-11-05 18:29:17] Importing types.py.Qi2CLIMTQfBFSHWKgdKQ9IxFO_k=.trap.gz (379 of 402)
+[2025-11-05 18:29:17] Importing typing.py.8JaZo5x2Gt-8Nl2CtCAWfw3RBDI=.trap.gz (380 of 402)
+[2025-11-05 18:29:17] Importing unicodedata.BrhcKjlMCMzSiNqbFhoWmeWtGf0=.trap.gz (381 of 402)
+[2025-11-05 18:29:17] Importing unittest.Q27R3k16VxVfWzxhT4ZBCAQEs-4=.trap.gz (382 of 402)
+[2025-11-05 18:29:17] Importing unix_events.py.E10Ob4JNDzXSKTqgwZ8T7UUlV8Y=.trap.gz (383 of 402)
+[2025-11-05 18:29:17] Importing urllib.G1J_t3fTx8AayJbh4sj5X-iCqcM=.trap.gz (384 of 402)
+[2025-11-05 18:29:17] Importing util.py.HXr9tpcIZt5ug9p9itknlFDCyVA=.trap.gz (385 of 402)
+[2025-11-05 18:29:17] Importing util.py.LpIou-HT6rXTZEUv-TsJBBiZyMc=.trap.gz (386 of 402)
+[2025-11-05 18:29:17] Importing util.py.X6pnvVvaO2Fp1zwoUdeXOFcrwP4=.trap.gz (387 of 402)
+[2025-11-05 18:29:17] Importing util.py.flQq86vek2aV2BlePo8fajFlJII=.trap.gz (388 of 402)
+[2025-11-05 18:29:17] Importing util.py.ug5N8iCbdyxazEiY2Z3O80sYlkI=.trap.gz (389 of 402)
+[2025-11-05 18:29:17] Importing utils.py.TzRFwTALb5PYBv4VJg-5lQbnCgw=.trap.gz (390 of 402)
+[2025-11-05 18:29:17] Importing uu.py.1uAjpSDvqboDth5-lvYiTwhT6vc=.trap.gz (391 of 402)
+[2025-11-05 18:29:17] Importing warnings.py.FiRdsjVgRyz-93tuKLoZyfzGh_M=.trap.gz (392 of 402)
+[2025-11-05 18:29:17] Importing weakref.py.enCNb7Agkj8rdCcJ6EyZN5l4l3s=.trap.gz (393 of 402)
+[2025-11-05 18:29:17] Importing webbrowser.py.LRYNSFlhdf7Ya0kTdyEj5mnlS8k=.trap.gz (394 of 402)
+[2025-11-05 18:29:17] Importing windows_events.py.tFRiPaOlvJSJMLe7UI4V8-vJJkU=.trap.gz (395 of 402)
+[2025-11-05 18:29:17] Importing windows_utils.py.6ilKtTi3h-5Rd7-CCBbkHb0eQh0=.trap.gz (396 of 402)
+[2025-11-05 18:29:17] Importing wintypes.py.YZ4pnuhCwulSN8lojJH8l8gWECY=.trap.gz (397 of 402)
+[2025-11-05 18:29:17] Importing xml.l4m8dKOfMKYShcZTxWMltZzFukU=.trap.gz (398 of 402)
+[2025-11-05 18:29:17] Importing xmlrpc.Fyuw29siACsS_re-JDbRCuQCvOQ=.trap.gz (399 of 402)
+[2025-11-05 18:29:17] Importing zipfile.py.zLxe-DQpHNwX-CIJ9ZU7aGeJaXg=.trap.gz (400 of 402)
+[2025-11-05 18:29:17] Importing zipimport.py.CsqZiFT5itO_ZJx0-oljJVNb43w=.trap.gz (401 of 402)
+[2025-11-05 18:29:17] Importing zlib.1S4byx5dmx4g0TQD3P8TgoC60W8=.trap.gz (402 of 402)
+[2025-11-05 18:29:17] [PROGRESS] dataset import> Merging relations
+[2025-11-05 18:29:17] Merging 1 fragment for 'files'.
+[2025-11-05 18:29:17] Merged 2040 bytes (1.99 KiB) for 'files'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'folders'.
+[2025-11-05 18:29:17] Merged 368 bytes for 'folders'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'containerparent'.
+[2025-11-05 18:29:17] Merged 2400 bytes (2.34 KiB) for 'containerparent'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_flags_versioned'.
+[2025-11-05 18:29:17] Merged 816 bytes for 'py_flags_versioned'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_cobjects'.
+[2025-11-05 18:29:17] Merged 200612 bytes (195.91 KiB) for 'py_cobjects'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_cobjecttypes'.
+[2025-11-05 18:29:17] Merged 385936 bytes (376.89 KiB) for 'py_cobjecttypes'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_cobject_sources'.
+[2025-11-05 18:29:17] Merged 405320 bytes (395.82 KiB) for 'py_cobject_sources'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_cobjectnames'.
+[2025-11-05 18:29:17] Merged 385936 bytes (376.89 KiB) for 'py_cobjectnames'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_cmembers_versioned'.
+[2025-11-05 18:29:17] Merged 168688 bytes (164.73 KiB) for 'py_cmembers_versioned'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_special_objects'.
+[2025-11-05 18:29:17] Merged 336 bytes for 'py_special_objects'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_citems'.
+[2025-11-05 18:29:17] Merged 4500 bytes (4.39 KiB) for 'py_citems'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'ext_rettype'.
+[2025-11-05 18:29:17] Merged 12712 bytes (12.41 KiB) for 'ext_rettype'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'ext_argtype'.
+[2025-11-05 18:29:17] Merged 25536 bytes (24.94 KiB) for 'ext_argtype'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'ext_argreturn'.
+[2025-11-05 18:29:17] Merged 72 bytes for 'ext_argreturn'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'ext_proptype'.
+[2025-11-05 18:29:17] Merged 1072 bytes (1.05 KiB) for 'ext_proptype'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_Modules'.
+[2025-11-05 18:29:17] Merged 1124 bytes (1.10 KiB) for 'py_Modules'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_module_path'.
+[2025-11-05 18:29:17] Merged 2248 bytes (2.20 KiB) for 'py_module_path'.
+[2025-11-05 18:29:17] Merging 2 fragments for 'variable'.
+[2025-11-05 18:29:17] Merged 639168 bytes (624.19 KiB) for 'variable'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_extracted_version'.
+[2025-11-05 18:29:17] Merged 2040 bytes (1.99 KiB) for 'py_extracted_version'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_stmt_lists'.
+[2025-11-05 18:29:17] Merged 438360 bytes (428.09 KiB) for 'py_stmt_lists'.
+[2025-11-05 18:29:17] Merging 1 fragment for 'py_stmts'.
+[2025-11-05 18:29:17] Merged 1355088 bytes (1.29 MiB) for 'py_stmts'.
+[2025-11-05 18:29:17] Merging 5 fragments for 'py_scopes'.
+[2025-11-05 18:29:18] Merged 3505616 bytes (3.34 MiB) for 'py_scopes'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_alias_lists'.
+[2025-11-05 18:29:18] Merged 14488 bytes (14.15 KiB) for 'py_alias_lists'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_aliases'.
+[2025-11-05 18:29:18] Merged 25932 bytes (25.32 KiB) for 'py_aliases'.
+[2025-11-05 18:29:18] Merging 4 fragments for 'py_exprs'.
+[2025-11-05 18:29:18] Merged 5656144 bytes (5.39 MiB) for 'py_exprs'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_ints'.
+[2025-11-05 18:29:18] Merged 17680 bytes (17.27 KiB) for 'py_ints'.
+[2025-11-05 18:29:18] Merging 2 fragments for 'py_strs'.
+[2025-11-05 18:29:18] Merged 1645020 bytes (1.57 MiB) for 'py_strs'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_bools'.
+[2025-11-05 18:29:18] Merged 45064 bytes (44.01 KiB) for 'py_bools'.
+[2025-11-05 18:29:18] Merging 2 fragments for 'py_variables'.
+[2025-11-05 18:29:18] Merged 1428528 bytes (1.36 MiB) for 'py_variables'.
+[2025-11-05 18:29:18] Merging 3 fragments for 'py_expr_contexts'.
+[2025-11-05 18:29:18] Merged 2813208 bytes (2.68 MiB) for 'py_expr_contexts'.
+[2025-11-05 18:29:18] Merging 2 fragments for 'py_expr_lists'.
+[2025-11-05 18:29:18] Merged 1206660 bytes (1.15 MiB) for 'py_expr_lists'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_arguments'.
+[2025-11-05 18:29:18] Merged 72584 bytes (70.88 KiB) for 'py_arguments'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_Functions'.
+[2025-11-05 18:29:18] Merged 76592 bytes (74.80 KiB) for 'py_Functions'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_parameter_lists'.
+[2025-11-05 18:29:18] Merged 73576 bytes (71.85 KiB) for 'py_parameter_lists'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_cmpop_lists'.
+[2025-11-05 18:29:18] Merged 74968 bytes (73.21 KiB) for 'py_cmpop_lists'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_cmpops'.
+[2025-11-05 18:29:18] Merged 151376 bytes (147.83 KiB) for 'py_cmpops'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_numbers'.
+[2025-11-05 18:29:18] Merged 260064 bytes (253.97 KiB) for 'py_numbers'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_dict_item_lists'.
+[2025-11-05 18:29:18] Merged 16512 bytes (16.12 KiB) for 'py_dict_item_lists'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_dict_items'.
+[2025-11-05 18:29:18] Merged 121520 bytes (118.67 KiB) for 'py_dict_items'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_exports'.
+[2025-11-05 18:29:18] Merged 21944 bytes (21.43 KiB) for 'py_exports'.
+[2025-11-05 18:29:18] Merging 5 fragments for 'py_flow_bb_node'.
+[2025-11-05 18:29:18] Merged 6932944 bytes (6.61 MiB) for 'py_flow_bb_node'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_scope_flow'.
+[2025-11-05 18:29:18] Merged 926160 bytes (904.45 KiB) for 'py_scope_flow'.
+[2025-11-05 18:29:18] Merging 5 fragments for 'py_successors'.
+[2025-11-05 18:29:18] Merged 3617488 bytes (3.45 MiB) for 'py_successors'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_true_successors'.
+[2025-11-05 18:29:18] Merged 152120 bytes (148.55 KiB) for 'py_true_successors'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_false_successors'.
+[2025-11-05 18:29:18] Merged 150512 bytes (146.98 KiB) for 'py_false_successors'.
+[2025-11-05 18:29:18] Merging 5 fragments for 'py_idoms'.
+[2025-11-05 18:29:18] Merged 3378808 bytes (3.22 MiB) for 'py_idoms'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_ssa_var'.
+[2025-11-05 18:29:18] Merged 493312 bytes (481.75 KiB) for 'py_ssa_var'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_ssa_defn'.
+[2025-11-05 18:29:18] Merged 485872 bytes (474.48 KiB) for 'py_ssa_defn'.
+[2025-11-05 18:29:18] Merging 2 fragments for 'py_ssa_use'.
+[2025-11-05 18:29:18] Merged 877456 bytes (856.89 KiB) for 'py_ssa_use'.
+[2025-11-05 18:29:18] Merging 5 fragments for 'locations_ast'.
+[2025-11-05 18:29:18] Merged 11370192 bytes (10.84 MiB) for 'locations_ast'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_scope_location'.
+[2025-11-05 18:29:18] Merged 87424 bytes (85.38 KiB) for 'py_scope_location'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_codelines'.
+[2025-11-05 18:29:18] Merged 87176 bytes (85.13 KiB) for 'py_codelines'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_commentlines'.
+[2025-11-05 18:29:18] Merged 87176 bytes (85.13 KiB) for 'py_commentlines'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_docstringlines'.
+[2025-11-05 18:29:18] Merged 87176 bytes (85.13 KiB) for 'py_docstringlines'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_alllines'.
+[2025-11-05 18:29:18] Merged 87176 bytes (85.13 KiB) for 'py_alllines'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'numlines'.
+[2025-11-05 18:29:18] Merged 4000 bytes (3.91 KiB) for 'numlines'.
+[2025-11-05 18:29:18] Merging 5 fragments for 'py_locations'.
+[2025-11-05 18:29:18] Merged 3575776 bytes (3.41 MiB) for 'py_locations'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_StringPart_lists'.
+[2025-11-05 18:29:18] Merged 4136 bytes (4.04 KiB) for 'py_StringPart_lists'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_StringParts'.
+[2025-11-05 18:29:18] Merged 14100 bytes (13.77 KiB) for 'py_StringParts'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_boolops'.
+[2025-11-05 18:29:18] Merged 28716 bytes (28.04 KiB) for 'py_boolops'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_unaryops'.
+[2025-11-05 18:29:18] Merged 38244 bytes (37.35 KiB) for 'py_unaryops'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_operators'.
+[2025-11-05 18:29:18] Merged 85620 bytes (83.61 KiB) for 'py_operators'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_Classes'.
+[2025-11-05 18:29:18] Merged 8792 bytes (8.59 KiB) for 'py_Classes'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_exception_successors'.
+[2025-11-05 18:29:18] Merged 104312 bytes (101.87 KiB) for 'py_exception_successors'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_ssa_phi'.
+[2025-11-05 18:29:18] Merged 95648 bytes (93.41 KiB) for 'py_ssa_phi'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_comments'.
+[2025-11-05 18:29:18] Merged 189984 bytes (185.53 KiB) for 'py_comments'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'py_str_lists'.
+[2025-11-05 18:29:18] Merged 952 bytes for 'py_str_lists'.
+[2025-11-05 18:29:18] Merging 1 fragment for 'sourceLocationPrefix'.
+[2025-11-05 18:29:18] Merged 4 bytes for 'sourceLocationPrefix'.
+[2025-11-05 18:29:18] Saving string and id pools to disk.
+[2025-11-05 18:29:18] Finished importing TRAP files.
+[2025-11-05 18:29:18] Read 182.77 MiB of uncompressed TRAP data.
+[2025-11-05 18:29:18] Relation data size: 51.72 MiB (merge rate: 57.31 MiB/s)
+[2025-11-05 18:29:18] String pool size: 11.03 MiB
+[2025-11-05 18:29:18] ID pool size: 5.50 MiB
+[2025-11-05 18:29:18] [PROGRESS] dataset import> Finished writing database (relations: 51.72 MiB; string pool: 11.03 MiB).
+[2025-11-05 18:29:18] Pausing evaluation to close the cache at sequence stamp o+3
+[2025-11-05 18:29:18] The disk cache is freshly trimmed; leave it be.
+[2025-11-05 18:29:18] Unpausing evaluation
+[2025-11-05 18:29:18] Plumbing command codeql dataset import completed.
+[2025-11-05 18:29:18] [PROGRESS] database finalize> TRAP import complete (6.5s).
+[2025-11-05 18:29:18] Running plumbing command: codeql database cleanup --mode=trim -- /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db
+[2025-11-05 18:29:19] [PROGRESS] database cleanup> Cleaning up existing TRAP files after import...
+[2025-11-05 18:29:19] [PROGRESS] database cleanup> TRAP files cleaned up (19ms).
+[2025-11-05 18:29:19] [PROGRESS] database cleanup> Cleaning up scratch directory...
+[2025-11-05 18:29:19] [PROGRESS] database cleanup> Scratch directory cleaned up (19ms).
+[2025-11-05 18:29:19] Running plumbing command: codeql dataset cleanup --mode=trim -- /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/db-python
+[2025-11-05 18:29:19] [PROGRESS] dataset cleanup> Cleaning up dataset in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/db-python.
+[2025-11-05 18:29:19] Trimming disk cache at /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/db-python/default/cache in mode trim.
+[2025-11-05 18:29:19] Sequence stamp origin is -5984714979630751018
+[2025-11-05 18:29:19] Pausing evaluation to zealously trim disk at sequence stamp o+0
+[2025-11-05 18:29:19] Unpausing evaluation
+[2025-11-05 18:29:19] Trimming completed (1ms): Trimmed disposable data from cache.
+[2025-11-05 18:29:19] Pausing evaluation to close the cache at sequence stamp o+1
+[2025-11-05 18:29:19] The disk cache is freshly trimmed; leave it be.
+[2025-11-05 18:29:19] Unpausing evaluation
+[2025-11-05 18:29:19] [PROGRESS] dataset cleanup> Trimmed disposable data from cache.
+[2025-11-05 18:29:19] [PROGRESS] dataset cleanup> Finalizing dataset in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/db-python
+[2025-11-05 18:29:19] [DETAILS] dataset cleanup> Finished deleting ID pool from /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db/db-python (2ms).
+[2025-11-05 18:29:19] Plumbing command codeql dataset cleanup completed.
+[2025-11-05 18:29:19] Plumbing command codeql database cleanup completed with status 0.
+[2025-11-05 18:29:19] [PROGRESS] database finalize> Finished zipping source archive (1.46 MiB).
+[2025-11-05 18:29:19] Plumbing command codeql database finalize completed.
+[2025-11-05 18:29:19] [PROGRESS] database create> Successfully created database at /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-078_py/02/codeql_db.
+[2025-11-05 18:29:19] Terminating normally.

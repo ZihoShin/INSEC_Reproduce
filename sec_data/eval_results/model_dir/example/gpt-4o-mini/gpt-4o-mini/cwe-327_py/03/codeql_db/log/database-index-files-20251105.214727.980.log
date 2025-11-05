@@ -1,0 +1,10 @@
+[2025-11-05 21:47:27] This is codeql database index-files --include-extension=.yaml --include-extension=.yml --size-limit=5m --language yaml -- /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-327_py/03/codeql_db
+[2025-11-05 21:47:27] Log file was started late.
+[2025-11-05 21:47:28] Using index-files script /home/zshin/codeql/yaml/tools/index-files.sh.
+[2025-11-05 21:47:28] [PROGRESS] database index-files> Scanning for files in /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-327_py/03/out_src...
+[2025-11-05 21:47:28] Calling plumbing command: codeql resolve files --include-extension=.yaml --include-extension=.yml --size-limit=5m /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-327_py/03/out_src --format=json
+[2025-11-05 21:47:28] [PROGRESS] resolve files> Scanning /home/zshin/00_workspace/INSEC/iclr_sub/sec_data/eval_results/model_dir/example/gpt-4o-mini/gpt-4o-mini/cwe-327_py/03/out_src...
+[2025-11-05 21:47:28] Plumbing command codeql resolve files completed:
+                      [ ]
+[2025-11-05 21:47:28] [DETAILS] database index-files> Found 0 files.
+[2025-11-05 21:47:28] Terminating normally.
